@@ -85,9 +85,10 @@ export const ObjectiveSelector: React.FC<ObjectiveSelectorProps> = () => {
                 {obj.imageUrl ? (
                   <img 
                     src={obj.imageUrl} 
-                    alt={obj.title}
+                    alt={`Illustration de l'objectif : ${obj.title} - Pack Vision Libre`}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
                   />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-blue-900/40 to-[#0D1B2A] flex items-center justify-center">

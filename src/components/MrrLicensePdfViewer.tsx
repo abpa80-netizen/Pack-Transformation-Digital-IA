@@ -109,9 +109,9 @@ export const MrrLicensePdfViewer: React.FC<MrrLicensePdfViewerProps> = ({ isOpen
               </span>
               <div className="w-48 h-0.5 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto mb-3" />
               
-              <h1 className="text-xl sm:text-2xl font-black text-slate-900 uppercase tracking-tight leading-tight">
+              <h2 className="text-xl sm:text-2xl font-black text-slate-900 uppercase tracking-tight leading-tight">
                 LICENCE OFFICIELLE DE DROITS<br />DE REVENTE MAÎTRE (MRR)
-              </h1>
+              </h2>
               <p className="text-xs text-slate-600 font-medium mt-1">
                 Certificat délivré par : <strong className="text-slate-900">VISION LIBRE</strong>
               </p>

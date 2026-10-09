@@ -113,7 +113,10 @@ export const Hero: React.FC<HeroProps> = ({ onPrimaryCta, onDiscoverCta }) => {
               <div className="relative overflow-hidden rounded-xl">
                 <img
                   src={ecosystemMockupImage || packMockupImage}
-                  alt="Écosystème Vision Libre - Formations Digital & IA"
+                  alt="Écosystème du Pack Transformation Digital & IA par Vision Libre Digital Lab"
+                  width={640}
+                  height={400}
+                  loading="eager"
                   className="w-full h-auto object-cover rounded-xl transition-transform duration-300 group-hover:scale-[1.02]"
                 />
 

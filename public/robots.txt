@@ -1,0 +1,6 @@
+# robots.txt pour Vision Libre / Vision Libre Digital Lab
+User-agent: *
+Allow: /
+
+# Exclusion des endpoints d'API privées
+Disallow: /api/

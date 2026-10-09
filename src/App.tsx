@@ -20,6 +20,7 @@ import { StickyMobileCta } from './components/StickyMobileCta';
 import { OrderModal } from './components/OrderModal';
 import { MrrLicensePdfViewer } from './components/MrrLicensePdfViewer';
 import { GeminiChatbot } from './components/GeminiChatbot';
+import { SeoHead } from './components/SeoHead';
 import { PillarCategory } from './types';
 
 export default function App() {
@@ -54,6 +55,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#07111F] text-slate-100 flex flex-col font-sans selection:bg-blue-600 selection:text-white">
+      {/* Fondations SEO dynamiques */}
+      <SeoHead canonicalPath="/" />
       
       {/* 1. HEADER (Vision Libre, Accueil, Objectifs, Catalogue, MRR, FAQ, Commander) */}
       <Navbar 
