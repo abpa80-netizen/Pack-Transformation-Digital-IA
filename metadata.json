@@ -1,0 +1,6 @@
+{
+  "name": "Pack Transformation Digital & IA",
+  "description": "Écosystème de compétences digitales et IA : +50 formations et masterclasses pratiques par Vision Libre à 249 DH.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
