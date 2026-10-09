@@ -119,14 +119,29 @@ app.get('/robots.txt', (_req, res) => {
 app.get('/sitemap.xml', (_req, res) => {
   res.setHeader('Content-Type', 'application/xml; charset=utf-8');
   const officialUrl = getOfficialSiteUrl();
-  const loc = officialUrl ? `${officialUrl}/` : '/';
+  const getLoc = (path: string) => officialUrl ? `${officialUrl}${path}` : path;
+  
+  const pages = [
+    { path: '/', priority: '1.0' },
+    { path: '/formation-ia', priority: '0.8' },
+    { path: '/formation-business-en-ligne', priority: '0.8' },
+    { path: '/formation-ecommerce', priority: '0.8' },
+    { path: '/formation-marketing-digital', priority: '0.8' },
+    { path: '/formation-creation-contenu', priority: '0.8' },
+    { path: '/formation-design', priority: '0.8' },
+    { path: '/formation-freelance', priority: '0.8' },
+    { path: '/formation-finance-trading', priority: '0.8' },
+  ];
+
+  const xmlEntries = pages.map((p) => `  <url>
+    <loc>${getLoc(p.path)}</loc>
+    <changefreq>weekly</changefreq>
+    <priority>${p.priority}</priority>
+  </url>`).join('\n');
+
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>${loc}</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+${xmlEntries}
 </urlset>`;
   res.send(xml);
 });

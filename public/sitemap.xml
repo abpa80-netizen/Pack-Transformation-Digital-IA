@@ -6,4 +6,52 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <!-- 1. Formation IA & ChatGPT au Maroc -->
+  <url>
+    <loc>/formation-ia</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- 2. Formation Business en Ligne & Monétisation au Maroc -->
+  <url>
+    <loc>/formation-business-en-ligne</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- 3. Formation E-commerce & Shopify au Maroc -->
+  <url>
+    <loc>/formation-ecommerce</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- 4. Formation Marketing Digital & Acquisition au Maroc -->
+  <url>
+    <loc>/formation-marketing-digital</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- 5. Formation Création de Contenu & YouTube au Maroc -->
+  <url>
+    <loc>/formation-creation-contenu</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- 6. Formation Design Graphique & Webflow au Maroc -->
+  <url>
+    <loc>/formation-design</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- 7. Formation Freelance & Activité Indépendante au Maroc -->
+  <url>
+    <loc>/formation-freelance</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- 8. Formation Finance, Cryptomonnaies & Trading au Maroc -->
+  <url>
+    <loc>/formation-finance-trading</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

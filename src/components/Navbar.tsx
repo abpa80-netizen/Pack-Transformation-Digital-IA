@@ -14,7 +14,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOrderClick, onOpenCatalogue })
         
         {/* Brand wordmark */}
         <a 
-          href="#" 
+          href="/" 
           className="text-sm sm:text-base md:text-lg font-extrabold tracking-tight text-white hover:text-blue-400 transition-colors"
           style={{ fontFamily: 'Syne, sans-serif' }}
         >
@@ -23,13 +23,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOrderClick, onOpenCatalogue })
 
         {/* Clean Nav text links */}
         <nav className="hidden md:flex items-center gap-6 text-xs sm:text-sm font-medium text-[#AAB7C4]">
-          <a href="#" className="hover:text-white transition-colors">
+          <a href="/" className="hover:text-white transition-colors">
             Accueil
           </a>
-          <a href="#public-cible" className="hover:text-white transition-colors">
+          <a href="/#public-cible" className="hover:text-white transition-colors">
             Pour qui ?
           </a>
-          <a href="#objectifs" className="hover:text-white transition-colors">
+          <a href="/#objectifs" className="hover:text-white transition-colors">
             Objectifs
           </a>
           <button 
@@ -38,10 +38,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOrderClick, onOpenCatalogue })
           >
             Catalogue
           </button>
-          <a href="#revente" className="hover:text-white transition-colors">
+          <a href="/#revente" className="hover:text-white transition-colors">
             MRR
           </a>
-          <a href="#faq" className="hover:text-white transition-colors">
+          <a href="/#faq" className="hover:text-white transition-colors">
             FAQ
           </a>
         </nav>

@@ -22,8 +22,18 @@ import { MrrLicensePdfViewer } from './components/MrrLicensePdfViewer';
 import { GeminiChatbot } from './components/GeminiChatbot';
 import { SeoHead } from './components/SeoHead';
 import { PillarCategory } from './types';
+import { RouterProvider, useRouter } from './router/RouterContext';
+import { THEMATIC_PAGES } from './data/thematicPages';
+import { ThematicPage } from './components/thematic/ThematicPage';
+import { NotFoundPage } from './components/NotFoundPage';
 
-export default function App() {
+interface AppProps {
+  initialPath?: string;
+}
+
+function MainAppContent() {
+  const { currentPath, navigate } = useRouter();
+
   const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
   const [isCatalogueModalOpen, setIsCatalogueModalOpen] = useState(false);
   const [isLicenseModalOpen, setIsLicenseModalOpen] = useState(false);
@@ -42,6 +52,10 @@ export default function App() {
   };
 
   const handleScrollToObjectives = () => {
+    if (currentPath !== '/') {
+      navigate('/#objectifs');
+      return;
+    }
     const el = document.getElementById('objectifs');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
@@ -53,74 +67,95 @@ export default function App() {
     setIsCatalogueModalOpen(true);
   };
 
+  // 1. Route d'accueil principale
+  const isHome = currentPath === '/' || currentPath === '';
+
+  // 2. Route thématique
+  const thematicConfig = THEMATIC_PAGES[currentPath];
+
   return (
     <div className="min-h-screen bg-[#07111F] text-slate-100 flex flex-col font-sans selection:bg-blue-600 selection:text-white">
-      {/* Fondations SEO dynamiques */}
-      <SeoHead canonicalPath="/" />
-      
       {/* 1. HEADER (Vision Libre, Accueil, Objectifs, Catalogue, MRR, FAQ, Commander) */}
       <Navbar 
         onOrderClick={() => handleOpenOrderModal()}
         onOpenCatalogue={() => setIsCatalogueModalOpen(true)}
       />
 
-      <main className="flex-1">
-        
-        {/* 2. HERO — ULTRA COMPACT */}
-        <Hero 
-          onPrimaryCta={() => handleOpenOrderModal()}
-          onDiscoverCta={handleScrollToObjectives}
-        />
+      {/* 2. CONTENU PRINCIPAL SELON LA ROUTE */}
+      {isHome ? (
+        <main className="flex-1">
+          {/* Fondations SEO dynamiques de la page d'accueil */}
+          <SeoHead canonicalPath="/" />
+          
+          {/* 2. HERO — ULTRA COMPACT */}
+          <Hero 
+            onPrimaryCta={() => handleOpenOrderModal()}
+            onDiscoverCta={handleScrollToObjectives}
+          />
 
-        {/* 3. PUBLIC CIBLE — 8 CARTES VISUELLES (POUR QUI EST CE PACK ?) */}
-        <TargetAudienceSection />
+          {/* 3. PUBLIC CIBLE — 8 CARTES VISUELLES (POUR QUI EST CE PACK ?) */}
+          <TargetAudienceSection />
 
-        {/* 4. CHOISIS TON OBJECTIF — 8 PETITES CARTES (Détails au clic) */}
-        <ObjectiveSelector 
-          onSelectObjective={(title) => handleOpenOrderModal(title)} 
-        />
+          {/* 4. CHOISIS TON OBJECTIF — 8 PETITES CARTES (Détails au clic) */}
+          <ObjectiveSelector 
+            onSelectObjective={(title) => handleOpenOrderModal(title)} 
+          />
 
-        {/* 4. LE PACK EN UN COUP D'ŒIL — 5 PÔLES COMPACTS (Détails au clic) */}
-        <PillarsShowcase 
-          onOpenCatalogueWithPillar={handleOpenCatalogueWithPillar} 
-        />
+          {/* 4. LE PACK EN UN COUP D'ŒIL — 5 PÔLES COMPACTS (Détails au clic) */}
+          <PillarsShowcase 
+            onOpenCatalogueWithPillar={handleOpenCatalogueWithPillar} 
+          />
 
-        {/* 5. CATALOGUE — +50 FORMATIONS (Catalogue complet accessible au clic) */}
-        <CatalogueSection 
-          isModalOpen={isCatalogueModalOpen}
-          onOpenModal={() => setIsCatalogueModalOpen(true)}
-          onCloseModal={() => setIsCatalogueModalOpen(false)}
-          filterPillar={catalogueFilterPillar}
-          onOrderClick={(courseTitle) => handleOpenOrderModal(courseTitle)}
-        />
+          {/* 6. LICENCE MRR INCLUSE — CONSULTER LA LICENCE (PDF A4 au clic) */}
+          <MrrSectionCompact 
+            onOpenLicenseDirectly={() => setIsLicenseModalOpen(true)}
+          />
 
-        {/* 6. LICENCE MRR INCLUSE — CONSULTER LA LICENCE (PDF A4 au clic) */}
-        <MrrSectionCompact 
-          onOpenLicenseDirectly={() => setIsLicenseModalOpen(true)}
-        />
+          {/* 7. TÉMOIGNAGES — 💬 ILS ONT COMMENCÉ LEUR PARCOURS */}
+          <TestimonialsSection />
 
-        {/* 7. TÉMOIGNAGES — 💬 ILS ONT COMMENCÉ LEUR PARCOURS */}
-        <TestimonialsSection />
+          {/* 8. PRIX — UNE SEULE SECTION PRIX (249 DH · 30 premiers acheteurs) */}
+          <PricingSectionSingle 
+            onOrderClick={() => handleOpenOrderModal()} 
+            onOpenLicense={() => setIsLicenseModalOpen(true)}
+          />
 
-        {/* 8. PRIX — UNE SEULE SECTION PRIX (249 DH · 30 premiers acheteurs) */}
-        <PricingSectionSingle 
-          onOrderClick={() => handleOpenOrderModal()} 
-          onOpenLicense={() => setIsLicenseModalOpen(true)}
-        />
+          {/* 9. FAQ — ACCORDION UNIQUEMENT (Sans numérotation publique) */}
+          <FaqSectionAccordion 
+            onOpenChatbot={() => setIsChatbotOpen(true)}
+          />
 
-        {/* 9. FAQ — ACCORDION UNIQUEMENT (Sans numérotation publique) */}
-        <FaqSectionAccordion 
-          onOpenChatbot={() => setIsChatbotOpen(true)}
-        />
+          {/* 10. CTA FINAL — COMPACT */}
+          <FinalCtaCompact 
+            onOrderClick={() => handleOpenOrderModal()} 
+          />
+        </main>
+      ) : thematicConfig ? (
+        <main className="flex-1">
+          <ThematicPage
+            config={thematicConfig}
+            onOpenOrderModal={handleOpenOrderModal}
+            onOpenCatalogue={() => setIsCatalogueModalOpen(true)}
+            onOpenChatbot={() => setIsChatbotOpen(true)}
+            onOpenLicense={() => setIsLicenseModalOpen(true)}
+          />
+        </main>
+      ) : (
+        <main className="flex-1">
+          <NotFoundPage />
+        </main>
+      )}
 
-        {/* 10. CTA FINAL — COMPACT */}
-        <FinalCtaCompact 
-          onOrderClick={() => handleOpenOrderModal()} 
-        />
+      {/* 5. CATALOGUE — +50 FORMATIONS (Modal accessible depuis toutes les pages) */}
+      <CatalogueSection 
+        isModalOpen={isCatalogueModalOpen}
+        onOpenModal={() => setIsCatalogueModalOpen(true)}
+        onCloseModal={() => setIsCatalogueModalOpen(false)}
+        filterPillar={catalogueFilterPillar}
+        onOrderClick={(courseTitle) => handleOpenOrderModal(courseTitle)}
+      />
 
-      </main>
-
-      {/* 11. FOOTER COMPACT */}
+      {/* 11. FOOTER COMPACT AVEC MAILLAGE THÉMATIQUE */}
       <FooterCompact 
         onOpenCatalogue={() => setIsCatalogueModalOpen(true)} 
         onOpenLicense={() => setIsLicenseModalOpen(true)}
@@ -151,7 +186,14 @@ export default function App() {
         onOrderClick={() => handleOpenOrderModal()}
         onOpenCatalogue={() => setIsCatalogueModalOpen(true)}
       />
-
     </div>
+  );
+}
+
+export default function App({ initialPath }: AppProps) {
+  return (
+    <RouterProvider initialPath={initialPath}>
+      <MainAppContent />
+    </RouterProvider>
   );
 }
