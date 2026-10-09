@@ -3,20 +3,16 @@
  * Vision Libre / Vision Libre Digital Lab
  *
  * RÈGLES CRITIQUES :
- * - Aucune URL locale (localhost) ou de prévisualisation (.run.app, webcontainer, etc.)
+ * - Aucune URL locale (localhost) ou de prévisualisation temporaire (.run.app, webcontainer, etc.)
  *   ne doit être considérée comme domaine de production officiel.
- * - Le domaine de production doit être configuré via la variable d'environnement VITE_SITE_URL.
- * - Ne pas inventer de domaine fictif.
+ * - Domaine officiel actif actuel : https://packtransformationia.vercel.app
+ * - Remplacement futur : Configurer SITE_URL ou VITE_SITE_URL (ex: https://visionlibre.ma)
  */
 
-const rawSiteUrl = (
-  (typeof import.meta !== 'undefined' && import.meta.env && (import.meta.env.VITE_SITE_URL as string)) ||
-  (typeof process !== 'undefined' && process.env && (process.env.VITE_SITE_URL || process.env.SITE_URL)) ||
-  ''
-).trim();
+export const DEFAULT_PRODUCTION_URL = 'https://packtransformationia.vercel.app';
 
 // Détection stricte d'environnements locaux ou de prévisualisation temporaire
-const isNonProductionUrl = (url: string): boolean => {
+export const isNonProductionUrl = (url: string): boolean => {
   if (!url) return true;
   const lower = url.toLowerCase();
   return (
@@ -28,10 +24,25 @@ const isNonProductionUrl = (url: string): boolean => {
   );
 };
 
-// URL canonique officielle de production (vide par défaut si non configurée pour éviter les erreurs d'indexation)
-export const OFFICIAL_SITE_URL = isNonProductionUrl(rawSiteUrl) 
-  ? '' 
-  : rawSiteUrl.replace(/\/$/, '');
+export const resolveOfficialSiteUrl = (configuredUrl?: string): string => {
+  const raw = (
+    configuredUrl ||
+    (typeof import.meta !== 'undefined' && import.meta.env && (import.meta.env.VITE_SITE_URL as string)) ||
+    (typeof process !== 'undefined' && process.env && (process.env.VITE_SITE_URL || process.env.SITE_URL)) ||
+    ''
+  ).trim();
+
+  // Si une URL de production personnalisée est configurée et n'est pas un domaine de preview
+  if (raw && !isNonProductionUrl(raw)) {
+    return raw.replace(/\/$/, '');
+  }
+
+  // Domaine Vercel officiel actif actuel
+  return DEFAULT_PRODUCTION_URL.replace(/\/$/, '');
+};
+
+// URL canonique officielle active
+export const OFFICIAL_SITE_URL = resolveOfficialSiteUrl();
 
 export const SITE_CONFIG = {
   name: 'Vision Libre',

@@ -4,3 +4,6 @@ Allow: /
 
 # Exclusion des endpoints d'API privées
 Disallow: /api/
+
+# Référence au sitemap officiel actif
+Sitemap: https://packtransformationia.vercel.app/sitemap.xml

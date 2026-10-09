@@ -116,8 +116,22 @@ async function prerender() {
     }
   }
 
+  // 7. Synchronisation absolue du sitemap.xml dans dist/
+  const sitemapEntries = routes.map((r) => {
+    const loc = r === '/' ? `${OFFICIAL_SITE_URL}/` : `${OFFICIAL_SITE_URL}${r}`;
+    const priority = r === '/' ? '1.0' : '0.8';
+    return `  <url>\n    <loc>${loc}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
+  }).join('\n');
+
+  const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapEntries}\n</urlset>\n`;
+  fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), sitemapXml, 'utf8');
+
+  // 8. Synchronisation absolue du robots.txt dans dist/
+  const robotsTxt = `# robots.txt pour Vision Libre / Vision Libre Digital Lab\nUser-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${OFFICIAL_SITE_URL}/sitemap.xml\n`;
+  fs.writeFileSync(path.join(DIST_DIR, 'robots.txt'), robotsTxt, 'utf8');
+
   await vite.close();
-  console.log(`✅ Pré-rendu terminé avec succès pour les ${routes.length} pages publiques.`);
+  console.log(`✅ Pré-rendu terminé avec succès pour les ${routes.length} pages publiques avec sitemap et robots synchronisés.`);
 }
 
 prerender().catch((err) => {

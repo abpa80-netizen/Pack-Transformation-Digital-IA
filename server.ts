@@ -6,6 +6,7 @@ import { createServer as createViteServer } from 'vite';
 import { GoogleGenAI } from '@google/genai';
 import { COURSES_DATA } from './src/data/courses';
 import { CHATBOT_SYSTEM_INSTRUCTION } from './src/config/chatbot';
+import { resolveOfficialSiteUrl } from './src/config/site';
 
 dotenv.config();
 
@@ -87,39 +88,19 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
-// Helper pour récupérer l'URL de production officielle (sans preview ni localhost)
-function getOfficialSiteUrl(): string {
-  const raw = (process.env.SITE_URL || process.env.VITE_SITE_URL || '').trim();
-  if (!raw) return '';
-  const lower = raw.toLowerCase();
-  if (
-    lower.includes('localhost') ||
-    lower.includes('127.0.0.1') ||
-    lower.includes('.run.app') ||
-    lower.includes('webcontainer') ||
-    lower.includes('ais-')
-  ) {
-    return '';
-  }
-  return raw.replace(/\/$/, '');
-}
-
 // Endpoint SEO : robots.txt
 app.get('/robots.txt', (_req, res) => {
   res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-  const officialUrl = getOfficialSiteUrl();
-  let content = 'User-agent: *\nAllow: /\nDisallow: /api/\n';
-  if (officialUrl) {
-    content += `\nSitemap: ${officialUrl}/sitemap.xml\n`;
-  }
+  const officialUrl = resolveOfficialSiteUrl();
+  const content = `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${officialUrl}/sitemap.xml\n`;
   res.send(content);
 });
 
 // Endpoint SEO : sitemap.xml
 app.get('/sitemap.xml', (_req, res) => {
   res.setHeader('Content-Type', 'application/xml; charset=utf-8');
-  const officialUrl = getOfficialSiteUrl();
-  const getLoc = (path: string) => officialUrl ? `${officialUrl}${path}` : path;
+  const officialUrl = resolveOfficialSiteUrl();
+  const getLoc = (path: string) => `${officialUrl}${path}`;
   
   const pages = [
     { path: '/', priority: '1.0' },
