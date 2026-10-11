@@ -5,6 +5,7 @@ import { renderToString } from 'react-dom/server';
 import { createServer } from 'vite';
 import { THEMATIC_PAGES } from '../src/data/thematicPages';
 import { OFFICIAL_SITE_URL, SITE_CONFIG } from '../src/config/site';
+import { getPageJsonLd } from '../src/config/schema';
 
 const DIST_DIR = path.resolve('dist');
 
@@ -98,7 +99,15 @@ async function prerender() {
       }
     }
 
-    // 5. Injection du contenu pré-rendu dans #root
+    // 5. Injection des données structurées Schema.org vérifiées (JSON-LD sérialisé de manière sûre)
+    const pageJsonLd = getPageJsonLd(route, OFFICIAL_SITE_URL);
+    const jsonLdString = JSON.stringify(pageJsonLd);
+    pageHtml = pageHtml.replace(
+      /<script id="schema-org" type="application\/ld\+json">[\s\S]*?<\/script>/,
+      `<script id="schema-org" type="application/ld+json">\n${jsonLdString}\n    </script>`
+    );
+
+    // 6. Injection du contenu pré-rendu dans #root
     pageHtml = pageHtml.replace(
       '<div id="root"></div>',
       `<div id="root">${appHtml}</div>`

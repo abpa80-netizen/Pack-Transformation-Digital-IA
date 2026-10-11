@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { SITE_CONFIG, OFFICIAL_SITE_URL } from '../config/site';
+import { getPageJsonLd } from '../config/schema';
 
 export interface SeoProps {
   title?: string;
@@ -12,7 +13,7 @@ export interface SeoProps {
 
 /**
  * Hook de gestion dynamique des métadonnées SEO pour les pages publiques.
- * Permet à chaque page d'avoir son propre titre, description, canonical et paramétrage d'indexation.
+ * Permet à chaque page d'avoir son propre titre, description, canonical, OpenGraph et données Schema.org.
  */
 export function useSeo({
   title = SITE_CONFIG.title,
@@ -57,8 +58,6 @@ export function useSeo({
     setMetaTag('name', 'twitter:image', ogImage);
 
     // 5. URL Canonique
-    // Règle stricte : Ne créer une balise canonical que si l'URL officielle de production est configurée,
-    // pour éviter d'indexer par erreur des URLs temporaires ou localhost.
     let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (OFFICIAL_SITE_URL) {
       const cleanPath = canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`;
@@ -71,8 +70,22 @@ export function useSeo({
       canonicalLink.setAttribute('href', canonicalUrl);
       setMetaTag('property', 'og:url', canonicalUrl);
     } else if (canonicalLink) {
-      // Si aucune URL de production officielle n'est encore définie, retirer tout ancien canonical erroné
       canonicalLink.remove();
+    }
+
+    // 6. Données structurées JSON-LD Schema.org (Graphe unique et sérialisé de manière sûre)
+    try {
+      const jsonLdData = getPageJsonLd(canonicalPath);
+      let scriptTag = document.getElementById('schema-org') as HTMLScriptElement | null;
+      if (!scriptTag) {
+        scriptTag = document.createElement('script');
+        scriptTag.id = 'schema-org';
+        scriptTag.type = 'application/ld+json';
+        document.head.appendChild(scriptTag);
+      }
+      scriptTag.textContent = JSON.stringify(jsonLdData);
+    } catch (err) {
+      console.error('Erreur mise à jour Schema.org client:', err);
     }
   }, [title, description, canonicalPath, ogImage, ogType, noIndex]);
 }

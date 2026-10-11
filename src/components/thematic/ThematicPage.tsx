@@ -43,33 +43,13 @@ export const ThematicPage: React.FC<ThematicPageProps> = ({
     .map((id) => COURSES_DATA.find((c) => c.id === id))
     .filter((c): c is Course => c !== undefined);
 
-  // Construction des données structurées FAQPage Schema.org
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: config.faq.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  };
-
   return (
     <div className="min-h-screen bg-[#07111F] text-slate-100 flex flex-col font-sans selection:bg-blue-600 selection:text-white">
-      {/* 1. MÉTADONNÉES SEO DYNAMIQUES */}
+      {/* 1. MÉTADONNÉES SEO DYNAMIQUES & SCHEMA.ORG */}
       <SeoHead
         title={config.title}
         description={config.metaDescription}
         canonicalPath={config.slug}
-      />
-
-      {/* JSON-LD FAQPage */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       {/* 2. FIL D'ARIANE (BREADCRUMBS) */}
