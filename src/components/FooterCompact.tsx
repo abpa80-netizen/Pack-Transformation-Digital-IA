@@ -8,7 +8,7 @@ interface FooterCompactProps {
   onOpenLicense: () => void;
 }
 
-export const FooterCompact: React.FC<FooterCompactProps> = ({ onOpenCatalogue, onOpenLicense }) => {
+export const FooterCompact: React.FC<FooterCompactProps> = ({ onOpenCatalogue }) => {
   return (
     <footer className="border-t border-white/[0.08] bg-[#050713] text-[#AAB7C4] text-xs py-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,7 +27,7 @@ export const FooterCompact: React.FC<FooterCompactProps> = ({ onOpenCatalogue, o
             </p>
           </div>
 
-          {/* Links: Pour qui ?, Catalogue, MRR, Licence, FAQ, Contact */}
+          {/* Liens principaux */}
           <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-300">
             <a href="/#public-cible" className="hover:text-white transition-colors">
               Pour qui ?
