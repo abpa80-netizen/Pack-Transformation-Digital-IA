@@ -49,7 +49,7 @@ export const FAQ_DATA: FaqItem[] = [
   {
     id: 'faq-10',
     question: 'Comment commander et régler ?',
-    answer: 'Cliquez sur « JE VEUX PROFITER DU TARIF » ou sur « COMMANDER SUR WHATSAPP ». Vous pouvez finaliser directement par WhatsApp ou régler par virement bancaire local marocain (CIH Bank, Attijariwafa, Cash Plus, Wafacash).'
+    answer: 'Cliquez sur « COMMANDER AU PRIX DE 15 € » ou sur « COMMANDER SUR WHATSAPP ». Vous pouvez finaliser directement par WhatsApp ou régler par virement bancaire local marocain (CIH Bank, Attijariwafa, Cash Plus, Wafacash).'
   },
   {
     id: 'faq-11',
