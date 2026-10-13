@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, MessageSquare, Flame } from 'lucide-react';
+import { ArrowRight, MessageSquare } from 'lucide-react';
 import { getWhatsAppUrl } from '../utils/whatsapp';
 
 interface FinalCtaCompactProps {
@@ -30,7 +30,7 @@ export const FinalCtaCompact: React.FC<FinalCtaCompactProps> = ({ onOrderClick }
           Tu as simplement besoin de commencer par la bonne compétence. »
         </p>
 
-        {/* Badges Inclusions & Urgence 30 premiers */}
+        {/* Badges de contenu inclus */}
         <div className="flex flex-wrap items-center justify-center gap-2.5 mb-5">
           <span className="px-3 py-1 rounded-full bg-blue-950/70 border border-blue-500/30 text-xs font-bold text-blue-300">
             +50 FORMATIONS
@@ -43,7 +43,7 @@ export const FinalCtaCompact: React.FC<FinalCtaCompactProps> = ({ onOrderClick }
           </span>
         </div>
 
-        {/* Urgence 30 premiers acheteurs sans répétition de prix */}
+        {/* Rappel transparent de l’offre */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs sm:text-sm font-bold mb-8 shadow-sm">
           <Flame className="w-4 h-4 text-amber-400 fill-amber-400 animate-pulse" />
           <span>🔥 OFFRE DE LANCEMENT — RÉSERVÉ AUX 30 PREMIERS ACHETEURS</span>
