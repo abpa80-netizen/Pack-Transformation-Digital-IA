@@ -53,7 +53,7 @@ export const PillarsShowcase: React.FC<PillarsShowcaseProps> = ({ onOpenCatalogu
                   onClick={() => setActivePillar(pillar)}
                   className="w-full py-1.5 px-3 rounded-lg bg-blue-600/20 hover:bg-blue-600 text-blue-300 hover:text-white border border-blue-500/30 text-[11px] font-bold transition-all cursor-pointer text-center"
                 >
-                  EXPLORER
+                  DÉCOUVRIR LE DOMAINE
                 </button>
               </div>
             );
