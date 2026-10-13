@@ -38,8 +38,8 @@ export const THEMATIC_PAGES: Record<string, ThematicPageConfig> = {
     ],
     whyThisPack: [
       "12 formations spécialisées en IA incluses dans un catalogue global de 51 cours complets.",
-      "Accès immédiat et à vie pour un tarif unique de 249 DH sans abonnement récurrent.",
-      "Licence de revente Master Resell Rights (MRR) incluse : possibilité de redistribuer les modules selon les termes de la licence.",
+      "Accès immédiat et à vie pour un tarif unique de 15 € sans abonnement récurrent.",
+      "Ressources pratiques pour développer vos compétences numériques.",
       "Pédagogie pragmatique axée sur des cas d'usage réels et applicables dès le premier jour."
     ],
     faq: [
@@ -99,23 +99,23 @@ export const THEMATIC_PAGES: Record<string, ThematicPageConfig> = {
       'biz-7', 'biz-8', 'tch-13', 'biz-1'
     ],
     whyThisPack: [
-      "Une approche concrète pour démarrer avec un budget maîtrisé : le pack complet est proposé à 249 DH.",
+      "Une approche concrète pour démarrer avec un budget maîtrisé : le pack complet est proposé à 15 €.",
       "Synergie avec les pôles Marketing et IA pour générer du trafic qualifié vers vos offres.",
-      "Droit de revente MRR : vous pouvez exploiter le pack lui-même comme premier produit numérique à commercialiser.",
+      "Ressources pratiques pour développer vos compétences numériques.",
       "Contenus clairs, sans promesses fantaisistes de fortune instantanée."
     ],
     faq: [
       {
         question: "Quel budget faut-il pour démarrer un business digital au Maroc ?",
-        answer: "Le démarrage d'une activité numérique axée sur les compétences et les infoproduits requiert principalement un ordinateur, une connexion internet et un investissement pédagogique de base tel que notre pack à 249 DH."
+        answer: "Le démarrage d'une activité numérique axée sur les compétences et les infoproduits requiert principalement un ordinateur, une connexion internet et un investissement pédagogique de base tel que notre pack à 15 €."
       },
       {
         question: "Peut-on vendre à l'international depuis le Maroc ?",
         answer: "Oui, les compétences transmises permettent de créer des offres destinées aussi bien au marché marocain qu'à des clients internationaux en Europe ou au Moyen-Orient."
       },
       {
-        question: "Qu'est-ce que la licence MRR incluse dans l'offre ?",
-        answer: "La licence Master Resell Rights vous autorise légalement à revendre les masterclasses du pack et à conserver 100% des recettes générées, sous réserve de respecter le prix plancher fixé à 200 DH."
+        question: "Comment accéder aux ressources incluses ?"est-ce que la licence MRR incluse dans l'offre ?",
+        answer: "Après confirmation de la commande, l’équipe vous communiquera les informations d’accès au contenu du pack."
       }
     ],
     relatedThematicSlugs: [
@@ -150,7 +150,7 @@ export const THEMATIC_PAGES: Record<string, ThematicPageConfig> = {
       },
       {
         title: "Marketplaces & Seconde Main (Vinted)",
-        description: "Explorez les stratégies d'achat-revente, la sélection de pièces rentables et la gestion des transactions de proximité."
+        description: "Explorez les ressources pédagogiques et les parcours pour développer vos compétences numériques."achat-revente, la sélection de pièces rentables et la gestion des transactions de proximité."
       },
       {
         title: "Optimisation de la Fiche Produit",
@@ -163,7 +163,7 @@ export const THEMATIC_PAGES: Record<string, ThematicPageConfig> = {
     whyThisPack: [
       "Combinaison directe avec les modules de publicité Facebook Ads, Google Ads et TikTok pour alimenter votre boutique en visiteurs.",
       "Accès aux cours de design (Canva, Photoshop) pour concevoir vos bannières et fiches produits sans frais d'agence.",
-      "Paiement unique de 249 DH incluant les 51 formations de l'écosystème.",
+      "Paiement unique de 15 € incluant les 51 formations de l'écosystème.",
       "Support d'orientation interactif via notre assistant Vision Libre AI."
     ],
     faq: [
@@ -173,11 +173,11 @@ export const THEMATIC_PAGES: Record<string, ThematicPageConfig> = {
       },
       {
         question: "Ai-je besoin de stock pour débuter ?",
-        answer: "Les modules expliquent différents modèles, incluant l'achat-revente avec stock réduit, la vente de produits numériques sans inventaire physique, ainsi que les principes du stockage délégué."
+        answer: "Après confirmation de la commande, l’équipe vous communiquera les informations d’accès au contenu du pack."achat-revente avec stock réduit, la vente de produits numériques sans inventaire physique, ainsi que les principes du stockage délégué."
       },
       {
         question: "Comment payer la formation depuis le Maroc ?",
-        answer: "Le règlement s'effectue simplement en dirhams marocains (249 DH) par virement bancaire local (CIH, Attijariwafa, Cash Plus, Wafacash) avec assistance directe sur WhatsApp."
+        answer: "Le règlement s'effectue simplement en dirhams marocains (15 €) par virement bancaire local (CIH, Attijariwafa, Cash Plus, Wafacash) avec assistance directe sur WhatsApp."
       }
     ],
     relatedThematicSlugs: [
@@ -226,8 +226,8 @@ export const THEMATIC_PAGES: Record<string, ThematicPageConfig> = {
     whyThisPack: [
       "10 formations exhaustives dédiées aux régies et leviers modernes d'acquisition.",
       "Intégration directe des modules d'IA pour démultiplier votre vitesse de création de textes publicitaires et de visuels.",
-      "Un tarif imbattable de 249 DH donnant accès à l'intégralité du catalogue des 51 formations.",
-      "Documentation MRR officielle consultable en ligne avant achat."
+      "Un tarif imbattable de 15 € donnant accès à l'intégralité du catalogue des 51 formations.",
+      "Ressources pratiques pour développer vos compétences numériques."
     ],
     faq: [
       {
@@ -288,8 +288,8 @@ export const THEMATIC_PAGES: Record<string, ThematicPageConfig> = {
     whyThisPack: [
       "Apprentissage des outils visuels indispensables (Canva, Photoshop) directement inclus dans le pack.",
       "Synergie immédiate avec les modules de copywriting et de prompt engineering IA.",
-      "Pack complet de 51 formations pour 249 DH sans aucun abonnement caché.",
-      "Droit de revente MRR pour monétiser immédiatement les ressources fournies."
+      "Pack complet de 51 formations pour 15 € sans aucun abonnement caché.",
+      "Ressources pratiques pour développer vos compétences numériques."
     ],
     faq: [
       {
@@ -350,7 +350,7 @@ export const THEMATIC_PAGES: Record<string, ThematicPageConfig> = {
     whyThisPack: [
       "Apprentissage simultané du design statique et de la création de sites complets via Webflow.",
       "Complémentarité directe avec les modules de publicité et d'IA pour enrichir vos compositions.",
-      "Tarif unique de 249 DH incluant l'accès à 51 masterclasses pratiques sans frais cachés.",
+      "Tarif unique de 15 € incluant l'accès à 51 masterclasses pratiques sans frais cachés.",
       "Validation de commande simple et instantanée sur WhatsApp avec confirmation directe."
     ],
     faq: [
@@ -411,8 +411,8 @@ export const THEMATIC_PAGES: Record<string, ThematicPageConfig> = {
     ],
     whyThisPack: [
       "Une boîte à outils complète de 51 masterclasses pour développer à la fois vos compétences techniques et vos aptitudes commerciales.",
-      "Investissement minimal de 249 DH, rentabilisé dès votre première petite mission client.",
-      "Licence MRR fournie : possibilité d'offrir des modules de formation complémentaires à vos propres clients professionnels.",
+      "Investissement minimal de 15 €, rentabilisé dès votre première petite mission client.",
+      "Ressources pratiques pour développer vos compétences numériques.",
       "Accès flexible 24h/24 pour vous former tout en conservant votre emploi ou vos études."
     ],
     faq: [
@@ -472,7 +472,7 @@ export const THEMATIC_PAGES: Record<string, ThematicPageConfig> = {
       'fin-1', 'fin-2', 'fin-3', 'fin-4', 'fin-5', 'fin-6', 'fin-7'
     ],
     whyThisPack: [
-      "7 modules structurés intégrés dans un pack global de 51 formations pour seulement 249 DH.",
+      "7 modules structurés intégrés dans un pack global de 51 formations pour seulement 15 €.",
       "Discours transparent, pédagogique et responsable, sans aucune promesse de rendement garanti.",
       "Accès aux modules d'IA et de tech (Python, Excel) pour automatiser vos analyses de données de marché.",
       "Validation rapide de votre commande via les banques marocaines (CIH, Attijariwafa, etc.)."
