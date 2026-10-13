@@ -21,6 +21,9 @@ export const PricingSectionSingle: React.FC<PricingSectionSingleProps> = ({ onOr
           <p className="text-xs sm:text-sm text-blue-200 mt-2 max-w-lg mx-auto">
             Un paiement unique pour accéder aux ressources présentées dans cette offre.
           </p>
+          <p className="text-xs sm:text-sm text-slate-300 mt-3 max-w-lg mx-auto leading-relaxed">
+            Tu n’as pas besoin de tout maîtriser aujourd’hui. Choisis une première compétence, suis ton parcours et transforme tes idées en actions concrètes.
+          </p>
         </div>
         <div className="py-7 text-center">
           <span className="text-xs font-mono font-medium text-slate-400 uppercase tracking-wider block mb-1.5">Prix habituel</span>
@@ -31,6 +34,9 @@ export const PricingSectionSingle: React.FC<PricingSectionSingleProps> = ({ onOr
           <div className="flex flex-wrap items-center justify-center gap-2 text-xs text-emerald-400 font-bold uppercase tracking-wider mt-3">
             <span>Paiement unique</span><span className="text-white/20">·</span><span>Pas d'abonnement</span>
           </div>
+          <p className="text-xs text-slate-300 mt-4 max-w-md mx-auto leading-relaxed">
+            Le plus difficile est souvent de commencer. Profite du tarif promotionnel actuel et avance à ton rythme, une compétence après l’autre.
+          </p>
         </div>
         <div className="py-5 border-y border-white/[0.08] max-w-lg mx-auto">
           <div className="text-center mb-4">
@@ -48,7 +54,7 @@ export const PricingSectionSingle: React.FC<PricingSectionSingleProps> = ({ onOr
         </div>
         <div className="pt-6 space-y-3 max-w-md mx-auto">
           <button onClick={onOrderClick} className="w-full inline-flex items-center justify-center gap-2 py-4 px-6 text-sm sm:text-base font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-xl shadow-xl shadow-blue-600/30 transition-all active:scale-[0.98] cursor-pointer">
-            <span>COMMANDER AU PRIX DE 15 €</span><ArrowRight className="w-4 h-4" />
+            <span>JE PASSE À L’ACTION — 15 €</span><ArrowRight className="w-4 h-4" />
           </button>
           <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-5 text-xs sm:text-sm font-semibold text-emerald-300 hover:text-white bg-[#07111F] hover:bg-white/[0.06] border border-emerald-500/40 rounded-xl transition-colors cursor-pointer text-center">
             <MessageSquare className="w-4 h-4 text-emerald-400" /><span>COMMANDER SUR WHATSAPP</span>
