@@ -35,10 +35,10 @@ const TARGET_PROFILES: TargetProfile[] = [
     accentColor: 'from-blue-500/20 to-indigo-500/10 border-blue-500/30 text-blue-400',
     description: 'Vous lancez ou développez une entreprise et cherchez à piloter votre marketing, automatiser vos tâches et convertir vos prospects sans dépendre d’agences coûteuses.',
     recommendedCourses: [
-      'Business en ligne',
-      'Copywriting',
-      'Facebook Ads',
-      'Automatisation des workflows'
+      'Créer un business en ligne : principes et modèles',
+      'ChatGPT et copywriting : devenir copywriter freelance',
+      'Apprendre Facebook Ads',
+      'Automatisation sur ChatGPT : optimiser son flux de travail'
     ]
   },
   {
@@ -50,10 +50,10 @@ const TARGET_PROFILES: TargetProfile[] = [
     accentColor: 'from-emerald-500/20 to-teal-500/10 border-emerald-500/30 text-emerald-400',
     description: 'Vous gérez une boutique en ligne ou lancez votre marque et souhaitez rentabiliser votre trafic, optimiser votre catalogue et maîtriser l’acquisition publicitaire.',
     recommendedCourses: [
-      'Shopify',
-      'Amazon FBA',
-      'TikTok Marketing',
-      'Achat/revente Vinted'
+      'Créer une boutique en ligne avec Shopify',
+      'Amazon FBA : les fondamentaux du vendeur',
+      'TikTok pour le marketing',
+      'Achat-revente sur Vinted : démarrer'
     ]
   },
   {
@@ -65,10 +65,10 @@ const TARGET_PROFILES: TargetProfile[] = [
     accentColor: 'from-amber-500/20 to-yellow-500/10 border-amber-500/30 text-amber-400',
     description: 'Vous proposez des services indépendants et voulez étoffer votre catalogue d’offres, prospecter efficacement et livrer des résultats de haute qualité plus rapidement.',
     recommendedCourses: [
-      'Acquisition clients',
-      'Copywriting avec IA',
-      'Webflow',
-      'Canva'
+      'Référencement Google : devenir visible sur les moteurs de recherche',
+      'ChatGPT et copywriting : devenir copywriter freelance',
+      'Webflow : créer un site web sans coder',
+      'Canva : créer un CV professionnel'
     ]
   },
   {
@@ -80,10 +80,10 @@ const TARGET_PROFILES: TargetProfile[] = [
     accentColor: 'from-cyan-500/20 to-blue-500/10 border-cyan-500/30 text-cyan-400',
     description: 'Vous partez de zéro dans le numérique et cherchez une méthode progressive, sans jargon inutile, pour acquérir rapidement des compétences concrètes et immédiatement applicables.',
     recommendedCourses: [
-      'ChatGPT de A à Z',
-      'Canva',
-      'Instagram Business',
-      'ChatGPT'
+      'ChatGPT de A à Z : maîtriser ChatGPT',
+      'Canva : créer un CV professionnel',
+      'Instagram Business : développer sa présence professionnelle',
+      'ChatGPT de A à Z : maîtriser ChatGPT'
     ]
   },
   {
@@ -95,10 +95,10 @@ const TARGET_PROFILES: TargetProfile[] = [
     accentColor: 'from-purple-500/20 to-pink-500/10 border-purple-500/30 text-purple-400',
     description: 'Vous souhaitez développer une communauté engagée, produire des formats vidéo percutants à cadence élevée et convertir votre visibilité en opportunités durables.',
     recommendedCourses: [
-      'YouTube',
-      'YouTube Shorts',
-      'Rédaction de contenus',
-      'Photoshop'
+      'Créer et administrer une chaîne YouTube',
+      'Créer une chaîne YouTube Shorts et la monétiser',
+      'ChatGPT : rédaction de contenus et prompts',
+      'Photoshop 2022 : les essentiels'
     ]
   },
   {
@@ -110,10 +110,10 @@ const TARGET_PROFILES: TargetProfile[] = [
     accentColor: 'from-violet-500/20 to-purple-500/10 border-violet-500/30 text-violet-400',
     description: 'Vous souhaitez concevoir, packager et distribuer des e-books, templates, guides ou exploiter la licence de revente MRR pour générer des ventes numériques directes.',
     recommendedCourses: [
-      'Vente d\'e-books avec ChatGPT & Canva',
-      'Monétisation',
-      'Copywriting',
-      'Suite ultime de Bots'
+      'Créer et vendre des livres numériques avec ChatGPT & Canva',
+      'Vendre ses produits numériques : stratégie de lancement',
+      'ChatGPT et copywriting : devenir copywriter freelance',
+      'La suite ultime de bots ChatGPT : de zéro à héros'
     ]
   },
   {
@@ -125,10 +125,10 @@ const TARGET_PROFILES: TargetProfile[] = [
     accentColor: 'from-blue-500/20 to-sky-500/10 border-blue-500/30 text-blue-400',
     description: 'Vous voulez intégrer l’IA générative et l’automatisation dans vos flux professionnels quotidiens pour diviser par deux votre temps de travail opérationnel.',
     recommendedCourses: [
-      'ChatGPT de A à Z',
-      'Prompts',
-      'Suite ultime de Bots',
-      'Automatisation des workflows'
+      'ChatGPT de A à Z : maîtriser ChatGPT',
+      'Boostez votre productivité avec ChatGPT : 50+ prompts',
+      'La suite ultime de bots ChatGPT : de zéro à héros',
+      'Automatisation sur ChatGPT : optimiser son flux de travail'
     ]
   },
   {
@@ -140,10 +140,10 @@ const TARGET_PROFILES: TargetProfile[] = [
     accentColor: 'from-rose-500/20 to-pink-500/10 border-rose-500/30 text-rose-400',
     description: 'Vous combinez sensibilité esthétique et curiosité technologique pour bâtir des visuels saisissants, des interfaces modernes et des environnements web interactifs.',
     recommendedCourses: [
-      'UI/UX',
-      'Webflow',
-      'Photoshop',
-      'Midjourney'
+      'Webflow : créer un site web sans coder',
+      'Webflow : créer un site web sans coder',
+      'Photoshop 2022 : les essentiels',
+      'Le guide de l’IA : ChatGPT, Midjourney et DALL·E'
     ]
   }
 ];
