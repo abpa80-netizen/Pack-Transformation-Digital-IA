@@ -104,11 +104,11 @@ const TARGET_PROFILES: TargetProfile[] = [
   {
     id: 'produits-digitaux',
     title: 'Vendeurs de produits digitaux',
-    subtitle: 'MRR & infoproduits',
+    subtitle: 'Produits numériques',
     icon: Package,
     tag: 'Produits numériques',
     accentColor: 'from-violet-500/20 to-purple-500/10 border-violet-500/30 text-violet-400',
-    description: 'Vous souhaitez concevoir, packager et distribuer des e-books, templates, guides ou exploiter la licence de revente MRR pour générer des ventes numériques directes.',
+    description: 'Vous souhaitez concevoir, organiser et distribuer des e-books, templates et guides numériques utiles à votre activité.',
     recommendedCourses: [
       'Créer et vendre des livres numériques avec ChatGPT & Canva',
       'Vendre ses produits numériques : stratégie de lancement',
