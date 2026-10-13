@@ -18,7 +18,7 @@ export const TestimonialsSection: React.FC = () => {
       author: 'Yassine M.',
       role: 'Freelance & Digital Marketing',
       quote:
-        'Franchement, pour 249 DH, le contenu est juste dingue. J\'étais bloqué sur la création de tunnels de vente pour mes clients sur WhatsApp. Grâce au module sur l\'automatisation et aux prompts IA, j\'ai pu livrer deux projets cette semaine et rentabiliser le pack en 48h. C\'est du concret, pas de la théorie inutile.',
+        'J\'ai trouvé les sujets variés et les ressources pratiques utiles pour organiser mon apprentissage et avancer sur mes projets numériques.',
       rating: 5,
     },
     {
@@ -34,9 +34,9 @@ export const TestimonialsSection: React.FC = () => {
       id: 'slot-3',
       tag: 'RABAT',
       author: 'Amine K.',
-      role: 'Business Digital & Revente MRR',
+      role: 'Business digital',
       quote:
-        'Ce qui m\'a convaincu, c\'est la licence de revente MRR. J\'ai téléchargé le pack, configuré ma page en une soirée, et j\'ai déjà effectué mes 3 premières ventes directement via WhatsApp avec Cash on Delivery / Virement. Un produit digital clé en main très facile à commercialiser au Maroc.',
+        'J\'ai apprécié la variété des sujets et les parcours proposés pour repérer les modules liés à mes objectifs.',
       rating: 5,
     },
     {
