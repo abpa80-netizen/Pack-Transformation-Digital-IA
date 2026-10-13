@@ -42,6 +42,15 @@ export const GeminiChatbot: React.FC<GeminiChatbotProps> = ({
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!isOpen) return;
+    const previous = window.history.state && typeof window.history.state === 'object' ? window.history.state : {};
+    window.history.pushState({ ...previous, appOverlay: 'chatbot-modal' }, '', window.location.href);
+    const handleBack = () => onToggle();
+    window.addEventListener('popstate', handleBack);
+    return () => window.removeEventListener('popstate', handleBack);
+  }, [isOpen, onToggle]);
+
+  useEffect(() => {
     if (isOpen) {
       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
