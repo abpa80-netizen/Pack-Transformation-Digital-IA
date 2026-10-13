@@ -123,7 +123,7 @@ const TARGET_PROFILES: TargetProfile[] = [
     icon: Bot,
     tag: 'Intelligence artificielle',
     accentColor: 'from-blue-500/20 to-sky-500/10 border-blue-500/30 text-blue-400',
-    description: 'Vous voulez intégrer l’IA générative et l’automatisation dans vos flux professionnels quotidiens pour diviser par deux votre temps de travail opérationnel.',
+    description: 'Vous voulez intégrer l’IA générative et l’automatisation dans vos tâches professionnelles pour gagner du temps, mieux organiser votre travail et explorer de nouvelles méthodes.'
     recommendedCourses: [
       'ChatGPT de A à Z : maîtriser ChatGPT',
       'Boostez votre productivité avec ChatGPT : 50+ prompts',
