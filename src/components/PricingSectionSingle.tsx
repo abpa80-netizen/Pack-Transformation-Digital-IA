@@ -70,7 +70,7 @@ export const PricingSectionSingle: React.FC<PricingSectionSingleProps> = ({ onOr
               <span className="text-white/20">·</span>
               <span>Pas d'abonnement</span>
               <span className="text-white/20">·</span>
-              <span className="text-blue-300">Licence MRR incluse</span>
+
             </div>
 
             {/* Urgency 30 premiers acheteurs */}
