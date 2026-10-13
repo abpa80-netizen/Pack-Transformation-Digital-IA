@@ -114,7 +114,7 @@ export const THEMATIC_PAGES: Record<string, ThematicPageConfig> = {
         answer: "Oui, les compétences transmises permettent de créer des offres destinées aussi bien au marché marocain qu'à des clients internationaux en Europe ou au Moyen-Orient."
       },
       {
-        question: "Comment accéder aux ressources incluses ?"est-ce que la licence MRR incluse dans l'offre ?",
+        question: "Comment accéder aux ressources incluses ?",
         answer: "Après confirmation de la commande, l’équipe vous communiquera les informations d’accès au contenu du pack."
       }
     ],
@@ -150,7 +150,7 @@ export const THEMATIC_PAGES: Record<string, ThematicPageConfig> = {
       },
       {
         title: "Marketplaces & Seconde Main (Vinted)",
-        description: "Explorez les ressources pédagogiques et les parcours pour développer vos compétences numériques."achat-revente, la sélection de pièces rentables et la gestion des transactions de proximité."
+        description: "Explorez les ressources pédagogiques et les parcours pour développer vos compétences numériques."
       },
       {
         title: "Optimisation de la Fiche Produit",
@@ -173,7 +173,7 @@ export const THEMATIC_PAGES: Record<string, ThematicPageConfig> = {
       },
       {
         question: "Ai-je besoin de stock pour débuter ?",
-        answer: "Après confirmation de la commande, l’équipe vous communiquera les informations d’accès au contenu du pack."achat-revente avec stock réduit, la vente de produits numériques sans inventaire physique, ainsi que les principes du stockage délégué."
+        answer: "Après confirmation de la commande, l’équipe vous communiquera les informations d’accès au contenu du pack."
       },
       {
         question: "Comment payer la formation depuis le Maroc ?",
