@@ -71,7 +71,7 @@ function MainAppContent() {
 
   return (
     <div className="min-h-screen bg-[#07111F] text-slate-100 flex flex-col font-sans selection:bg-blue-600 selection:text-white">
-      {/* 1. HEADER (Vision Libre, Accueil, Objectifs, Catalogue, MRR, FAQ, Commander) */}
+      {/* 1. HEADER (Vision Libre, Accueil, Objectifs, Catalogue, FAQ, Commander) */}
       <Navbar 
         onOrderClick={() => handleOpenOrderModal()}
         onOpenCatalogue={() => setIsCatalogueModalOpen(true)}
@@ -110,7 +110,6 @@ function MainAppContent() {
           {/* 7. PRIX — offre et éléments de réassurance */}
           <PricingSectionSingle 
             onOrderClick={() => handleOpenOrderModal()} 
-            onOpenLicense={() => setIsLicenseModalOpen(true)}
           />
 
           {/* 8. FAQ — ACCORDION UNIQUEMENT (Sans numérotation publique) */}
@@ -157,7 +156,6 @@ function MainAppContent() {
         selectedObjectiveTitle={selectedObjectiveTitle}
       />
 
-      <MrrLicensePdfViewer isOpen={isLicenseModalOpen} onClose={() => setIsLicenseModalOpen(false)} />
 
       {/* 15. ASSISTANT OFFICIEL VISION LIBRE AI */}
       <GeminiChatbot
