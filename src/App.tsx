@@ -10,7 +10,6 @@ import { TargetAudienceSection } from './components/TargetAudienceSection';
 import { ObjectiveSelector } from './components/ObjectiveSelector';
 import { PillarsShowcase } from './components/PillarsShowcase';
 import { CatalogueSection } from './components/CatalogueSection';
-import { MrrSectionCompact } from './components/MrrSectionCompact';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { PricingSectionSingle } from './components/PricingSectionSingle';
 import { FaqSectionAccordion } from './components/FaqSectionAccordion';
@@ -18,7 +17,6 @@ import { FinalCtaCompact } from './components/FinalCtaCompact';
 import { FooterCompact } from './components/FooterCompact';
 import { StickyMobileCta } from './components/StickyMobileCta';
 import { OrderModal } from './components/OrderModal';
-import { MrrLicensePdfViewer } from './components/MrrLicensePdfViewer';
 import { GeminiChatbot } from './components/GeminiChatbot';
 import { SeoHead } from './components/SeoHead';
 import { PillarCategory } from './types';
@@ -36,7 +34,6 @@ function MainAppContent() {
 
   const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
   const [isCatalogueModalOpen, setIsCatalogueModalOpen] = useState(false);
-  const [isLicenseModalOpen, setIsLicenseModalOpen] = useState(false);
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
   const [catalogueFilterPillar, setCatalogueFilterPillar] = useState<PillarCategory | 'all'>('all');
   const [selectedObjectiveTitle, setSelectedObjectiveTitle] = useState<string | undefined>(undefined);
@@ -111,18 +108,12 @@ function MainAppContent() {
           {/* 6. Public cible */}
           <TargetAudienceSection />
 
-          {/* 6. LICENCE MRR INCLUSE — CONSULTER LA LICENCE (PDF A4 au clic) */}
-          <MrrSectionCompact 
-            onOpenLicenseDirectly={() => setIsLicenseModalOpen(true)}
-          />
-
           {/* 7. TÉMOIGNAGES — 💬 ILS ONT COMMENCÉ LEUR PARCOURS */}
           <TestimonialsSection />
 
           {/* 8. PRIX — UNE SEULE SECTION PRIX (249 DH · 30 premiers acheteurs) */}
           <PricingSectionSingle 
             onOrderClick={() => handleOpenOrderModal()} 
-            onOpenLicense={() => setIsLicenseModalOpen(true)}
           />
 
           {/* 9. FAQ — ACCORDION UNIQUEMENT (Sans numérotation publique) */}
@@ -142,8 +133,7 @@ function MainAppContent() {
             onOpenOrderModal={handleOpenOrderModal}
             onOpenCatalogue={() => setIsCatalogueModalOpen(true)}
             onOpenChatbot={() => setIsChatbotOpen(true)}
-            onOpenLicense={() => setIsLicenseModalOpen(true)}
-          />
+              />
         </main>
       ) : (
         <main className="flex-1">
@@ -167,12 +157,6 @@ function MainAppContent() {
         isOpen={isOrderModalOpen}
         onClose={handleCloseOrderModal}
         selectedObjectiveTitle={selectedObjectiveTitle}
-      />
-
-      {/* 14. VISIONNEUSE OFFICIELLE DE LICENCE MRR (FORMAT A4) */}
-      <MrrLicensePdfViewer
-        isOpen={isLicenseModalOpen}
-        onClose={() => setIsLicenseModalOpen(false)}
       />
 
       {/* 15. ASSISTANT OFFICIEL VISION LIBRE AI */}
