@@ -138,7 +138,7 @@ export const ObjectiveSelector: React.FC<ObjectiveSelectorProps> = () => {
 
         {/* Indicateur visuel discret sur mobile pour guider le scroll horizontal */}
         <div className="flex sm:hidden justify-center items-center gap-1.5 mt-3 text-[11px] text-slate-400">
-          <span>👈 Glisser pour découvrir les 8 parcours 👉</span>
+          <span>Explorez les parcours en faisant défiler les cartes</span>
         </div>
 
       </div>
