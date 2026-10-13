@@ -93,18 +93,23 @@ function MainAppContent() {
             onDiscoverCta={handleScrollToObjectives}
           />
 
-          {/* 3. PUBLIC CIBLE — 8 CARTES VISUELLES (POUR QUI EST CE PACK ?) */}
+          {/* 3. OBJECTIF — aider le visiteur à choisir son parcours rapidement */}
+          <ObjectiveSelector onSelectObjective={(title) => handleOpenOrderModal(title)} />
+
+          {/* 4. CATALOGUE — accès rapide aux formations sans allonger la page */}
+          <CatalogueSection
+            isModalOpen={isCatalogueModalOpen}
+            onOpenModal={() => setIsCatalogueModalOpen(true)}
+            onCloseModal={() => setIsCatalogueModalOpen(false)}
+            filterPillar={catalogueFilterPillar}
+            onOrderClick={(courseTitle) => handleOpenOrderModal(courseTitle)}
+          />
+
+          {/* 5. Domaines principaux */}
+          <PillarsShowcase onOpenCatalogueWithPillar={handleOpenCatalogueWithPillar} />
+
+          {/* 6. Public cible */}
           <TargetAudienceSection />
-
-          {/* 4. CHOISIS TON OBJECTIF — 8 PETITES CARTES (Détails au clic) */}
-          <ObjectiveSelector 
-            onSelectObjective={(title) => handleOpenOrderModal(title)} 
-          />
-
-          {/* 4. LE PACK EN UN COUP D'ŒIL — 5 PÔLES COMPACTS (Détails au clic) */}
-          <PillarsShowcase 
-            onOpenCatalogueWithPillar={handleOpenCatalogueWithPillar} 
-          />
 
           {/* 6. LICENCE MRR INCLUSE — CONSULTER LA LICENCE (PDF A4 au clic) */}
           <MrrSectionCompact 
@@ -145,15 +150,6 @@ function MainAppContent() {
           <NotFoundPage />
         </main>
       )}
-
-      {/* 5. CATALOGUE — +50 FORMATIONS (Modal accessible depuis toutes les pages) */}
-      <CatalogueSection 
-        isModalOpen={isCatalogueModalOpen}
-        onOpenModal={() => setIsCatalogueModalOpen(true)}
-        onCloseModal={() => setIsCatalogueModalOpen(false)}
-        filterPillar={catalogueFilterPillar}
-        onOrderClick={(courseTitle) => handleOpenOrderModal(courseTitle)}
-      />
 
       {/* 11. FOOTER COMPACT AVEC MAILLAGE THÉMATIQUE */}
       <FooterCompact 
