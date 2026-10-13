@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { getWhatsAppUrl } from '../utils/whatsapp';
-import { X, FileText } from 'lucide-react';
-import { MrrLicensePdfViewer } from './MrrLicensePdfViewer';
 
 interface FooterCompactProps {
   onOpenCatalogue: () => void;
-  onOpenLicense: () => void;
 }
 
 export const FooterCompact: React.FC<FooterCompactProps> = ({ onOpenCatalogue }) => {
@@ -37,16 +34,6 @@ export const FooterCompact: React.FC<FooterCompactProps> = ({ onOpenCatalogue })
               className="hover:text-white transition-colors cursor-pointer"
             >
               Catalogue
-            </button>
-            <a href="/#revente" className="hover:text-white transition-colors">
-              MRR
-            </a>
-            <button
-              onClick={onOpenLicense}
-              className="hover:text-white transition-colors cursor-pointer flex items-center gap-1"
-            >
-              <FileText className="w-3.5 h-3.5 text-amber-400" />
-              <span>Licence (PDF)</span>
             </button>
             <a href="/#faq" className="hover:text-white transition-colors">
               FAQ
