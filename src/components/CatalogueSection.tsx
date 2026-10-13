@@ -46,7 +46,7 @@ export const CatalogueSection: React.FC<CatalogueSectionProps> = ({
     const handleBack = () => onCloseModal();
     window.addEventListener('popstate', handleBack);
     return () => window.removeEventListener('popstate', handleBack);
-  }, [isModalOpen, onCloseModal]);
+  }, [isModalOpen]);
 
   // Synchronisation avec filterPillar
   React.useEffect(() => {
