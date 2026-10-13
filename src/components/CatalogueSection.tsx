@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { COURSES_DATA } from '../data/courses';
 import { PillarCategory, Course, CourseCategory } from '../types';
 import { Search, BookOpen, X, CheckCircle2, ShieldCheck, FolderGit2 } from 'lucide-react';
@@ -37,6 +37,16 @@ export const CatalogueSection: React.FC<CatalogueSectionProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCourseForDetail, setSelectedCourseForDetail] = useState<Course | null>(null);
+
+  // Le bouton Retour du téléphone ferme le catalogue ouvert.
+  useEffect(() => {
+    if (!isModalOpen) return;
+    const previous = window.history.state && typeof window.history.state === 'object' ? window.history.state : {};
+    window.history.pushState({ ...previous, appOverlay: 'catalogue-modal' }, '', window.location.href);
+    const handleBack = () => onCloseModal();
+    window.addEventListener('popstate', handleBack);
+    return () => window.removeEventListener('popstate', handleBack);
+  }, [isModalOpen, onCloseModal]);
 
   // Synchronisation avec filterPillar
   React.useEffect(() => {
@@ -154,7 +164,7 @@ export const CatalogueSection: React.FC<CatalogueSectionProps> = ({
               </div>
 
               <button
-                onClick={onCloseModal}
+                onClick={() => { if (window.history.state?.appOverlay === 'catalogue-modal') { const { appOverlay, ...rest } = window.history.state; window.history.replaceState(rest, '', window.location.href); } onCloseModal(); }}
                 className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/[0.08] transition-colors cursor-pointer"
                 aria-label="Fermer le catalogue"
               >
