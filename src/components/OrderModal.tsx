@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { X, MessageSquare, CreditCard, ShieldCheck, CheckCircle2, Lock } from 'lucide-react';
 import { getWhatsAppUrl } from '../utils/whatsapp';
 
@@ -14,6 +14,23 @@ export const OrderModal: React.FC<OrderModalProps> = ({
   selectedObjectiveTitle,
 }) => {
   const [activeTab, setActiveTab] = useState<'whatsapp' | 'rib'>('whatsapp');
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const previous = window.history.state && typeof window.history.state === 'object' ? window.history.state : {};
+    window.history.pushState({ ...previous, appOverlay: 'order-modal' }, '', window.location.href);
+    const handleBack = () => onClose();
+    window.addEventListener('popstate', handleBack);
+    return () => window.removeEventListener('popstate', handleBack);
+  }, [isOpen, onClose]);
+
+  const closeModal = useCallback(() => {
+    if (window.history.state?.appOverlay === 'order-modal') {
+      const { appOverlay, ...rest } = window.history.state;
+      window.history.replaceState(rest, '', window.location.href);
+    }
+    onClose();
+  }, [onClose]);
 
   if (!isOpen) return null;
 
@@ -31,7 +48,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
         
         {/* Close Button */}
         <button
-          onClick={onClose}
+          onClick={closeModal}
           className="absolute top-4 right-4 p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/[0.06] transition-colors cursor-pointer"
           aria-label="Fermer"
         >
@@ -131,7 +148,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
             </div>
 
             <a
-              href={getWhatsAppUrl('Bonjour Vision Libre, je souhaite recevoir les coordonnées de paiement pour régler le offre promotionnelle du Pack Transformation Digital & IA.')}
+              href={getWhatsAppUrl('Bonjour Vision Libre, je souhaite recevoir les coordonnées de paiement pour régler l’offre promotionnelle du Pack Transformation Digital & IA.')}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-5 text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-xl shadow-lg transition-all cursor-pointer"
