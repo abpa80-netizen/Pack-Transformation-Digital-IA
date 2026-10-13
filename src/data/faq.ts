@@ -4,7 +4,7 @@ export const FAQ_DATA: FaqItem[] = [
   {
     id: 'faq-1',
     question: 'Qu’est-ce que le Pack Transformation Digital & IA ?',
-    answer: 'C’est un écosystème de plus de 50 formations et masterclasses pratiques réunies dans un pack unique couvrant l’IA, le business en ligne, le marketing digital, la finance/crypto et la tech/design, avec licence de revente Master Resell Rights (MRR).'
+    answer: 'C’est un écosystème de plus de 50 formations et masterclasses pratiques réunies dans un pack unique couvrant l’IA, le business en ligne, le marketing digital, la finance/crypto et la tech/design, avec des ressources pratiques pour apprendre et développer ses compétences.'
   },
   {
     id: 'faq-2',
@@ -44,7 +44,7 @@ export const FAQ_DATA: FaqItem[] = [
   {
     id: 'faq-9',
     question: 'Quel est le prix du pack ?',
-    answer: 'Le tarif de lancement est de 249 DH pour les 30 premiers acheteurs en paiement unique pour l’ensemble des 51 formations, bonus et licences inclus, sans aucun abonnement ni frais cachés.'
+    answer: 'Le prix promotionnel est de 15 € au lieu de 109 €, en paiement unique pour le contenu du pack. Aucun abonnement n’est prévu.'
   },
   {
     id: 'faq-10',
@@ -57,9 +57,9 @@ export const FAQ_DATA: FaqItem[] = [
     answer: 'Non. Aucun revenu n’est garanti. La licence MRR fournit un cadre juridique d’exploitation commerciale, mais vos résultats dépendent de votre travail, de vos actions et de votre stratégie.'
   },
   {
-    id: 'faq-12',
+    id: 'faq-9',
     question: 'Y a-t-il des frais cachés après l’achat ?',
-    answer: 'Aucun frais caché. Le tarif de 249 DH couvre l’accès complet à l’ensemble des formations, aux ressources incluses et à la licence de revente MRR.'
+    answer: 'Aucun frais caché. Le prix promotionnel de 15 € couvre l’accès au contenu et aux ressources indiquées dans l’offre.'
   },
   {
     id: 'faq-13',
@@ -67,17 +67,17 @@ export const FAQ_DATA: FaqItem[] = [
     answer: 'Vous pouvez consulter l’intégralité du certificat officiel de licence MRR directement sur la page en cliquant sur le bouton « CONSULTER LA LICENCE » (document officiel au format A4).'
   },
   {
-    id: 'faq-14',
+    id: 'faq-10',
     question: 'Quels sont les bonus ?',
     answer: 'Des ressources pratiques d’application sont incluses : bibliothèque de prompts testés, modèles de communication, guides méthodologiques et checklists d’action.'
   },
   {
-    id: 'faq-15',
+    id: 'faq-11',
     question: 'Comment choisir les formations adaptées à mon objectif ?',
     answer: 'Utilisez la section « Tu veux aller où ? » ou cliquez sur « Aide-moi à choisir » pour déployer automatiquement votre parcours recommandé sur-mesure.'
   },
   {
-    id: 'faq-16',
+    id: 'faq-12',
     question: 'Puis-je demander de l’aide ?',
     answer: 'Oui. Vous pouvez poser vos questions en direct à notre assistant IA Vision Libre AI 24h/7, ou échanger directement avec notre équipe via WhatsApp.'
   }
