@@ -95,7 +95,7 @@ export const Hero: React.FC<HeroProps> = ({ onPrimaryCta, onDiscoverCta }) => {
                 onClick={onPrimaryCta}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-slate-200 bg-[#0D1B2A] hover:bg-white/[0.08] border border-white/[0.12] rounded-xl transition-colors cursor-pointer"
               >
-                <span>VOIR L’OFFRE COMPLÈTE</span>
+                <span>JE PASSE À L’ACTION</span>
                 <ArrowRight className="w-4 h-4 text-blue-400" />
               </button>
             </div>
