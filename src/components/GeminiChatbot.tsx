@@ -13,7 +13,7 @@ const QUICK_PROMPTS = [
   'Je veux créer un business',
   'Je veux vendre des e-books',
   'Je veux faire du e-commerce',
-  'Je veux comprendre le MRR',
+  'Je veux en savoir plus sur le pack',
   'Je veux commander',
 ];
 
@@ -77,7 +77,7 @@ export const GeminiChatbot: React.FC<GeminiChatbotProps> = ({
       }
 
       const data = await response.json();
-      const botReply = data.reply || "Je suis à votre disposition pour vous renseigner sur le Pack Transformation Digital & IA au tarif de lancement de 249 DH réservé aux 30 premiers acheteurs.";
+      const botReply = data.reply || "Je suis à votre disposition pour vous renseigner sur le Pack Transformation Digital & IA et son offre promotionnelle à 15 €.";
 
       setMessages((prev) => [
         ...prev,
@@ -90,12 +90,12 @@ export const GeminiChatbot: React.FC<GeminiChatbotProps> = ({
     } catch (err) {
       console.error(err);
       // Fallback response if offline or backend error
-      let fallbackText = "Le Pack Transformation Digital & IA regroupe plus de 50 formations réparties en 5 pôles (IA, Business, Marketing, Finance et Tech) au tarif de lancement de 249 DH réservé aux 30 premiers acheteurs en paiement unique avec licence MRR incluse. Souhaitez-vous commander votre accès ou échanger avec notre équipe ?";
+      let fallbackText = "Le Pack Transformation Digital & IA regroupe plus de 50 formations réparties en 5 pôles (IA, Business, Marketing, Finance et Tech) au offre promotionnelle de 15 €  en paiement unique . Souhaitez-vous commander votre accès ou échanger avec notre équipe ?";
       
       if (userText.includes('commander') || userText.includes('249') || userText.includes('prix') || userText.includes('tarif')) {
-        fallbackText = "Pour commander votre pack au tarif de lancement de 249 DH réservé aux 30 premiers acheteurs en paiement unique, vous pouvez cliquer directement sur le bouton 'Commander' ci-dessous ou échanger avec notre équipe via WhatsApp.";
+        fallbackText = "Pour commander le pack à 15 € en paiement unique, cliquez sur le bouton « Commander » ou contactez notre équipe via WhatsApp.";
       } else if (userText.includes('MRR') || userText.includes('revente')) {
-        fallbackText = "Le pack inclut la licence officielle Master Resell Rights (MRR). L'ensemble des conditions, droits accordés et règles d'exploitation commerciale sont détaillés dans le certificat officiel de licence consultable directement sur le site via le bouton 'Consulter la licence'.";
+        fallbackText = "Le pack regroupe des formations et ressources pédagogiques. Pour toute question sur le contenu, contactez notre équipe via WhatsApp.";
       }
 
       setMessages((prev) => [
@@ -156,7 +156,7 @@ export const GeminiChatbot: React.FC<GeminiChatbotProps> = ({
                   <span className="w-2 h-2 rounded-full bg-emerald-400" />
                 </div>
                 <span className="text-[11px] text-[#AAB7C4]">
-                  Assistant officiel · 249 DH (30 premiers)
+                  Assistant officiel · Offre promotionnelle : 15 €
                 </span>
               </div>
             </div>
@@ -251,7 +251,7 @@ export const GeminiChatbot: React.FC<GeminiChatbotProps> = ({
               }}
               className="text-emerald-400 hover:underline font-bold flex items-center gap-1 cursor-pointer"
             >
-              <span>Commander (249 DH)</span>
+              <span>Commander (15 €)</span>
               <ArrowRight className="w-3 h-3" />
             </button>
             <a
