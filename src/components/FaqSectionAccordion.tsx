@@ -27,7 +27,7 @@ export const FaqSectionAccordion: React.FC<FaqSectionAccordionProps> = ({ onOpen
             QUESTIONS FRÉQUENTES
           </h2>
           <p className="text-xs sm:text-sm text-[#AAB7C4]">
-            Réponses claires et directes sur les formations, la licence et la commande.
+            Réponses claires sur les formations et la commande.
           </p>
         </div>
 
