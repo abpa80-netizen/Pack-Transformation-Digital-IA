@@ -12,6 +12,7 @@ import { PillarsShowcase } from './components/PillarsShowcase';
 import { CatalogueSection } from './components/CatalogueSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { PricingSectionSingle } from './components/PricingSectionSingle';
+import { MrrLicensePdfViewer } from './components/MrrLicensePdfViewer';
 import { FaqSectionAccordion } from './components/FaqSectionAccordion';
 import { FinalCtaCompact } from './components/FinalCtaCompact';
 import { FooterCompact } from './components/FooterCompact';
@@ -33,6 +34,7 @@ function MainAppContent() {
   const { currentPath, navigate } = useRouter();
 
   const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
+  const [isLicenseModalOpen, setIsLicenseModalOpen] = useState(false);
   const [isCatalogueModalOpen, setIsCatalogueModalOpen] = useState(false);
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
   const [catalogueFilterPillar, setCatalogueFilterPillar] = useState<PillarCategory | 'all'>('all');
@@ -114,11 +116,13 @@ function MainAppContent() {
           {/* 8. PRIX — UNE SEULE SECTION PRIX (249 DH · 30 premiers acheteurs) */}
           <PricingSectionSingle 
             onOrderClick={() => handleOpenOrderModal()} 
+            onOpenLicense={() => setIsLicenseModalOpen(true)}
           />
 
           {/* 9. FAQ — ACCORDION UNIQUEMENT (Sans numérotation publique) */}
           <FaqSectionAccordion 
             onOpenChatbot={() => setIsChatbotOpen(true)}
+            onOpenLicense={() => setIsLicenseModalOpen(true)}
           />
 
           {/* 10. CTA FINAL — COMPACT */}
@@ -158,6 +162,8 @@ function MainAppContent() {
         onClose={handleCloseOrderModal}
         selectedObjectiveTitle={selectedObjectiveTitle}
       />
+
+      <MrrLicensePdfViewer isOpen={isLicenseModalOpen} onClose={() => setIsLicenseModalOpen(false)} />
 
       {/* 15. ASSISTANT OFFICIEL VISION LIBRE AI */}
       <GeminiChatbot
