@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flame, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface StickyMobileCtaProps {
   onOrderClick: () => void;
