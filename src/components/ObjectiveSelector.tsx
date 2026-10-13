@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { OBJECTIVES_DATA } from '../data/objectives';
 import { ObjectivePathway } from '../types';
 import { 
@@ -18,6 +18,16 @@ interface ObjectiveSelectorProps {
 export const ObjectiveSelector: React.FC<ObjectiveSelectorProps> = () => {
   const [activeObjective, setActiveObjective] = useState<ObjectivePathway | null>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
+
+  // Sur mobile, le bouton Retour ferme d'abord la fenêtre du parcours.
+  useEffect(() => {
+    if (!activeObjective) return;
+    const previous = window.history.state && typeof window.history.state === 'object' ? window.history.state : {};
+    window.history.pushState({ ...previous, appOverlay: 'objective-modal' }, '', window.location.href);
+    const handleBack = () => setActiveObjective(null);
+    window.addEventListener('popstate', handleBack);
+    return () => window.removeEventListener('popstate', handleBack);
+  }, [activeObjective]);
 
   const scroll = (direction: 'left' | 'right') => {
     if (carouselRef.current) {
@@ -154,7 +164,7 @@ export const ObjectiveSelector: React.FC<ObjectiveSelectorProps> = () => {
             
             {/* Bouton de Fermeture */}
             <button
-              onClick={() => setActiveObjective(null)}
+              onClick={() => { if (window.history.state?.appOverlay === 'objective-modal') { const { appOverlay, ...rest } = window.history.state; window.history.replaceState(rest, '', window.location.href); } setActiveObjective(null); }}
               className="absolute top-4 right-4 p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/[0.08] transition-colors cursor-pointer"
               aria-label="Fermer le parcours"
             >
