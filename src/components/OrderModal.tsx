@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, MessageSquare, CreditCard, ShieldCheck, CheckCircle2, Lock, Flame } from 'lucide-react';
+import { X, MessageSquare, CreditCard, ShieldCheck, CheckCircle2, Lock } from 'lucide-react';
 import { getWhatsAppUrl } from '../utils/whatsapp';
 
 interface OrderModalProps {
@@ -18,7 +18,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
   if (!isOpen) return null;
 
   const whatsappMessage = selectedObjectiveTitle
-    ? `Bonjour Vision Libre, je souhaite profiter du tarif de lancement du Pack Transformation Digital & IA. Mon objectif prioritaire : ${selectedObjectiveTitle}.`
+    ? `Bonjour Vision Libre, je souhaite profiter du offre promotionnelle du Pack Transformation Digital & IA. Mon objectif prioritaire : ${selectedObjectiveTitle}.`
     : `Bonjour Vision Libre, je souhaite profiter du tarif de lancement du Pack Transformation Digital & IA.`;
 
   return (
@@ -52,17 +52,13 @@ export const OrderModal: React.FC<OrderModalProps> = ({
             Pack Transformation Digital & IA
           </h3>
           <div className="flex items-baseline gap-2.5 mt-2">
-            <span className="text-3xl font-black text-white font-mono">249 DH</span>
+            <span className="text-3xl font-black text-white font-mono">15 €</span>
             <span className="text-xs text-emerald-400 font-semibold bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">
               Paiement unique
             </span>
           </div>
 
-          <div className="mt-2.5 flex items-center gap-1.5 text-xs text-amber-300 font-medium">
-            <Flame className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
-            <span>Tarif de lancement réservé aux 30 premiers acheteurs</span>
-          </div>
-        </div>
+       </div>
 
         {/* Method selector tabs */}
         <div className="flex items-center gap-2 p-1 bg-white/[0.04] border border-white/[0.08] rounded-xl mb-6">
@@ -126,7 +122,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
 
               <div>
                 <span className="text-slate-400 block mb-0.5">Montant forfaitaire :</span>
-                <strong className="text-emerald-400 text-sm font-mono">249 DH (Paiement unique)</strong>
+                <strong className="text-emerald-400 text-sm font-mono">15 € (Paiement unique)</strong>
               </div>
 
               <div className="p-3 rounded-lg bg-[#07111F] border border-white/[0.06] text-[#AAB7C4] leading-relaxed">
@@ -150,15 +146,15 @@ export const OrderModal: React.FC<OrderModalProps> = ({
         <div className="mt-6 pt-5 border-t border-white/[0.08] grid grid-cols-2 gap-2 text-[11px] text-slate-400">
           <div className="flex items-center gap-1.5">
             <Lock className="w-3.5 h-3.5 text-blue-400" />
-            <span>Paiement sécurisé</span>
+            <span>Règlement à confirmer</span>
           </div>
           <div className="flex items-center gap-1.5">
             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Accès immédiat</span>
+            <span>Accès après confirmation</span>
           </div>
           <div className="flex items-center gap-1.5">
             <CheckCircle2 className="w-3.5 h-3.5 text-amber-400" />
-            <span>Licence MRR incluse</span>
+            <span>Paiement unique</span>
           </div>
           <div className="flex items-center gap-1.5">
             <ShieldCheck className="w-3.5 h-3.5 text-purple-400" />
