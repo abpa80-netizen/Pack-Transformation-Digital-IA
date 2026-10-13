@@ -38,9 +38,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOrderClick, onOpenCatalogue })
           >
             Catalogue
           </button>
-          <a href="/#revente" className="hover:text-white transition-colors">
-            MRR
-          </a>
           <a href="/#faq" className="hover:text-white transition-colors">
             FAQ
           </a>
