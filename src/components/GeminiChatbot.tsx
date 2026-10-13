@@ -48,7 +48,7 @@ export const GeminiChatbot: React.FC<GeminiChatbotProps> = ({
     const handleBack = () => onToggle();
     window.addEventListener('popstate', handleBack);
     return () => window.removeEventListener('popstate', handleBack);
-  }, [isOpen, onToggle]);
+  }, [isOpen]);
 
   useEffect(() => {
     if (isOpen) {
