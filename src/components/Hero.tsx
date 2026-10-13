@@ -43,25 +43,25 @@ export const Hero: React.FC<HeroProps> = ({ onPrimaryCta, onDiscoverCta }) => {
               className="text-3xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.12] mb-4 text-balance"
               style={{ fontFamily: 'Syne, sans-serif' }}
             >
-              PLUS DE 50 FORMATIONS.<br />
+              PAS BESOIN DE TOUT APPRENDRE.<br />
               <span className="bg-gradient-to-r from-blue-400 via-indigo-300 to-white bg-clip-text text-transparent">
-                UN SEUL PACK.
+                APPRENDS CE QUI TE FAIT AVANCER.
               </span><br />
-              TON PARCOURS DIGITAL COMMENCE ICI.
+              TON ÉCOSYSTÈME DIGITAL, AU MÊME ENDROIT.
             </h1>
 
             {/* Sous-titre */}
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-3 max-w-xl">
-              « IA, business, marketing, e-commerce, création de contenu, design, technologie et compétences digitales réunis dans un seul écosystème. »
+              Explore plus de 50 formations et masterclasses en IA, business, marketing, e-commerce et compétences numériques — puis choisis le parcours adapté à ton objectif.
             </p>
 
             {/* Accroche de curiosité + phrase de clarification */}
             <div className="mb-6 max-w-xl bg-blue-950/40 border border-blue-500/25 p-3.5 rounded-xl space-y-1.5">
               <p className="text-xs sm:text-sm text-blue-200 font-semibold italic">
-                « Et si tu pouvais arrêter de chercher ta prochaine formation… et commencer simplement par le bon parcours ? »
+                « Et si la prochaine compétence que tu apprends devenait le point de départ de ton prochain projet ? »
               </p>
               <p className="text-xs text-slate-300 leading-relaxed">
-                Ne cherche pas à tout apprendre. Choisis d'abord ton objectif. Découvre le parcours recommandé et explore les compétences qui correspondent à ton ambition.
+                Identifie ce que tu veux développer, explore les formations correspondantes et avance étape par étape, sans te disperser.
               </p>
             </div>
 
@@ -88,14 +88,14 @@ export const Hero: React.FC<HeroProps> = ({ onPrimaryCta, onDiscoverCta }) => {
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-xl shadow-xl shadow-blue-600/30 transition-all active:scale-[0.98] cursor-pointer"
               >
                 <Compass className="w-4 h-4 text-white" />
-                <span>DÉCOUVRIR MON PARCOURS</span>
+                <span>TROUVER MON PARCOURS</span>
               </button>
 
               <button
                 onClick={onPrimaryCta}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-slate-200 bg-[#0D1B2A] hover:bg-white/[0.08] border border-white/[0.12] rounded-xl transition-colors cursor-pointer"
               >
-                <span>COMMANDER LE PACK</span>
+                <span>VOIR L’OFFRE COMPLÈTE</span>
                 <ArrowRight className="w-4 h-4 text-blue-400" />
               </button>
             </div>
