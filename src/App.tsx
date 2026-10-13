@@ -11,7 +11,6 @@ import { ObjectiveSelector } from './components/ObjectiveSelector';
 import { CatalogueSection } from './components/CatalogueSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { PricingSectionSingle } from './components/PricingSectionSingle';
-import { MrrLicensePdfViewer } from './components/MrrLicensePdfViewer';
 import { FaqSectionAccordion } from './components/FaqSectionAccordion';
 import { FinalCtaCompact } from './components/FinalCtaCompact';
 import { FooterCompact } from './components/FooterCompact';
@@ -33,7 +32,6 @@ function MainAppContent() {
   const { currentPath, navigate } = useRouter();
 
   const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
-  const [isLicenseModalOpen, setIsLicenseModalOpen] = useState(false);
   const [isCatalogueModalOpen, setIsCatalogueModalOpen] = useState(false);
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
   const [catalogueFilterPillar, setCatalogueFilterPillar] = useState<PillarCategory | 'all'>('all');
