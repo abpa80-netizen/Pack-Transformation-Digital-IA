@@ -8,7 +8,6 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { TargetAudienceSection } from './components/TargetAudienceSection';
 import { ObjectiveSelector } from './components/ObjectiveSelector';
-import { PillarsShowcase } from './components/PillarsShowcase';
 import { CatalogueSection } from './components/CatalogueSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { PricingSectionSingle } from './components/PricingSectionSingle';
@@ -104,28 +103,25 @@ function MainAppContent() {
             onOrderClick={(courseTitle) => handleOpenOrderModal(courseTitle)}
           />
 
-          {/* 5. Domaines principaux */}
-          <PillarsShowcase onOpenCatalogueWithPillar={handleOpenCatalogueWithPillar} />
-
-          {/* 6. Public cible */}
+          {/* 5. Public cible */}
           <TargetAudienceSection />
 
-          {/* 7. TÉMOIGNAGES — 💬 ILS ONT COMMENCÉ LEUR PARCOURS */}
+          {/* 6. TÉMOIGNAGES — 💬 ILS ONT COMMENCÉ LEUR PARCOURS */}
           <TestimonialsSection />
 
-          {/* 8. PRIX — UNE SEULE SECTION PRIX (249 DH · 30 premiers acheteurs) */}
+          {/* 7. PRIX — offre et éléments de réassurance */}
           <PricingSectionSingle 
             onOrderClick={() => handleOpenOrderModal()} 
             onOpenLicense={() => setIsLicenseModalOpen(true)}
           />
 
-          {/* 9. FAQ — ACCORDION UNIQUEMENT (Sans numérotation publique) */}
+          {/* 8. FAQ — ACCORDION UNIQUEMENT (Sans numérotation publique) */}
           <FaqSectionAccordion 
             onOpenChatbot={() => setIsChatbotOpen(true)}
             onOpenLicense={() => setIsLicenseModalOpen(true)}
           />
 
-          {/* 10. CTA FINAL — COMPACT */}
+          {/* 9. CTA FINAL — COMPACT */}
           <FinalCtaCompact 
             onOrderClick={() => handleOpenOrderModal()} 
           />
