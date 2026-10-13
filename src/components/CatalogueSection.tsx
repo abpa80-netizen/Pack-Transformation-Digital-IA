@@ -25,7 +25,7 @@ const CATEGORY_DEFINITIONS: CategoryDefinition[] = [
   { id: 'content', label: 'Création de contenu', description: 'Infoproduits, e-books & vidéo' },
   { id: 'design', label: 'Design', description: 'Création graphique, interfaces UI/UX & no-code' },
   { id: 'tech', label: 'Technologie', description: 'Développement, programmation & cybersécurité' },
-  { id: 'finance', label: 'Finance', description: 'Actifs numériques, trading & investissement' },
+  { id: 'finance', label: 'Finance & trading', description: 'Finance, bourse, crypto et trading — contenus pédagogiques, sans conseil financier' },
 ];
 
 export const CatalogueSection: React.FC<CatalogueSectionProps> = ({
@@ -116,7 +116,7 @@ export const CatalogueSection: React.FC<CatalogueSectionProps> = ({
             +50 FORMATIONS & MASTERCLASSES
           </h2>
           <p className="text-xs sm:text-sm text-[#AAB7C4] mb-7 max-w-lg mx-auto">
-            Chaque module traite en profondeur d’un outil, d’une compétence ou d’un système opérationnel.
+            Parcours classés par objectif : les contenus essentiels d’abord, puis les bonus pour approfondir.
           </p>
 
           <button
@@ -202,6 +202,7 @@ export const CatalogueSection: React.FC<CatalogueSectionProps> = ({
             {/* Courses List - Scrollable */}
             <div className="flex-1 overflow-y-auto p-4 sm:p-6 bg-[#050713]/60 space-y-10">
               
+              <div className="rounded-xl border border-blue-500/20 bg-blue-950/20 px-4 py-3 text-xs text-slate-300 leading-relaxed">Chaque catégorie présente d’abord les formations essentielles (environ 75 %), puis les bonus d’approfondissement (environ 25 %). Les intitulés incomplets ou trop ambigus ont été écartés plutôt que présentés comme des formations confirmées.</div>
               {categoriesData.map((catGroup) => (
                 <div key={catGroup.id} className="space-y-4">
                   
@@ -223,16 +224,16 @@ export const CatalogueSection: React.FC<CatalogueSectionProps> = ({
                     </div>
 
                     <span className="text-xs font-mono font-medium text-slate-400 bg-white/[0.05] px-2.5 py-1 rounded-md">
-                      {catGroup.totalFiltered} {catGroup.totalFiltered > 1 ? 'formations' : 'formation'}
+                      {catGroup.totalFiltered} {catGroup.totalFiltered > 1 ? 'formations' : 'formation'} · {catGroup.courses.filter((c) => !c.isBonus).length} essentielles · {catGroup.courses.filter((c) => c.isBonus).length} bonus
                     </span>
                   </div>
 
-                  {/* Formations de la Catégorie (Toutes incluses dans le pack) */}
+                  {/* Parcours principal (75 %) puis contenus bonus (25 %) */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
                     {catGroup.courses.map((course: Course) => (
                       <div
                         key={course.id}
-                        className="p-4 rounded-xl bg-[#0D1B2A] border border-white/[0.08] hover:border-blue-500/30 transition-all flex flex-col justify-between group shadow-sm"
+                        className={`p-4 rounded-xl bg-[#0D1B2A] border hover:border-blue-500/30 transition-all flex flex-col justify-between group shadow-sm ${course.isBonus ? 'border-amber-500/25' : 'border-white/[0.08]'}`}
                       >
                         <div>
                           <div className="flex items-center justify-between text-[11px] text-[#AAB7C4] mb-1.5">
@@ -240,9 +241,11 @@ export const CatalogueSection: React.FC<CatalogueSectionProps> = ({
                             <span>{course.level}</span>
                           </div>
 
-                          <h5 className="text-sm font-bold text-white mb-2 leading-snug group-hover:text-blue-300 transition-colors">
-                            {course.title}
-                          </h5>
+                          <div className="flex items-start gap-2 mb-2">
+                            <h5 className="text-sm font-bold text-white leading-snug group-hover:text-blue-300 transition-colors flex-1">{course.title}</h5>
+                            {course.isBonus && <span className="shrink-0 text-[9px] font-bold uppercase tracking-wide text-amber-300 bg-amber-500/10 border border-amber-500/25 rounded-md px-1.5 py-1">Bonus</span>}
+                          </div>
+                          {course.highlight && <p className="text-xs text-slate-400 leading-relaxed mb-3">{course.highlight}</p>}
                         </div>
 
                         <div className="pt-2.5 border-t border-white/[0.06] flex items-center justify-between text-xs">
