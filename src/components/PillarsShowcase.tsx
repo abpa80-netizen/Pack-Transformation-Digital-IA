@@ -23,18 +23,7 @@ export const PillarsShowcase: React.FC<PillarsShowcaseProps> = ({ onOpenCatalogu
     <section id="poles" className="py-14 bg-[#07111F] border-t border-white/[0.06]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* En-tête Compact */}
-        <div className="max-w-2xl mx-auto text-center mb-8">
-          <h2 
-            className="text-2xl sm:text-3xl font-extrabold text-white mb-2 tracking-tight"
-            style={{ fontFamily: 'Syne, sans-serif' }}
-          >
-            LE PACK EN UN COUP D'ŒIL
-          </h2>
-          <p className="text-xs sm:text-sm text-[#AAB7C4]">
-            5 grands domaines de compétences digitales réunis dans un pack unique.
-          </p>
-        </div>
+        {/* Présentation des domaines accessible depuis les cartes et le catalogue. */}
 
         {/* 5 Cartes Compactes (Sans numéros publics) */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 max-w-5xl mx-auto mb-6">
