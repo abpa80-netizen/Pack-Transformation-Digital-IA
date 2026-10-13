@@ -26,16 +26,13 @@ export const FinalCtaCompact: React.FC<FinalCtaCompactProps> = ({ onOrderClick }
         </h2>
 
         <p className="text-sm sm:text-base text-[#AAB7C4] max-w-xl mx-auto leading-relaxed mb-6">
-          « Tu n'as pas besoin de tout apprendre en même temps.<br />
-          Tu as simplement besoin de commencer par la bonne compétence. »
+          Tu peux continuer à attendre le moment parfait, ou commencer avec les ressources disponibles aujourd’hui. Choisis une compétence, applique ce que tu apprends et fais avancer ton projet pas à pas.
         </p>
 
         {/* Badges de contenu inclus */}
         <div className="flex flex-wrap items-center justify-center gap-2.5 mb-5">
           <span className="px-3 py-1 rounded-full bg-blue-950/70 border border-blue-500/30 text-xs font-bold text-blue-300">
             +50 FORMATIONS
-          </span>
-          <span className="px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.1] text-xs font-medium text-slate-300">
           </span>
           <span className="px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.1] text-xs font-medium text-slate-300">
             ACCÈS AU CONTENU DU PACK
@@ -53,7 +50,7 @@ export const FinalCtaCompact: React.FC<FinalCtaCompactProps> = ({ onOrderClick }
             onClick={onOrderClick}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-sm sm:text-base font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-xl shadow-xl shadow-blue-600/30 transition-all active:scale-[0.98] cursor-pointer"
           >
-            <span>🚀 JE COMMENCE MA TRANSFORMATION</span>
+            <span>🚀 JE COMMENCE AUJOURD’HUI</span>
             <ArrowRight className="w-4 h-4" />
           </button>
 
