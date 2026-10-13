@@ -26,7 +26,7 @@ export const Hero: React.FC<HeroProps> = ({ onPrimaryCta, onDiscoverCta }) => {
           {/* Left Column: Proposition et Accroche Choc */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             
-            {/* Wordmark brand & Badge Offre de lancement */}
+            {/* Wordmark brand & badge promotionnel */}
             <div className="flex flex-wrap items-center gap-2.5 mb-4">
               <span className="text-xs font-mono font-bold tracking-widest text-blue-400 uppercase">
                 VISION LIBRE DIGITAL LAB
@@ -34,7 +34,7 @@ export const Hero: React.FC<HeroProps> = ({ onPrimaryCta, onDiscoverCta }) => {
               <span className="text-white/20">·</span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider shadow-sm">
                 <Flame className="w-3.5 h-3.5 text-amber-400 fill-amber-400 animate-pulse" />
-                <span>OFFRE DE LANCEMENT</span>
+                <span>OFFRE PROMOTIONNELLE</span>
               </span>
             </div>
 
@@ -70,14 +70,14 @@ export const Hero: React.FC<HeroProps> = ({ onPrimaryCta, onDiscoverCta }) => {
               <div className="flex items-center justify-between gap-3 pb-2.5 border-b border-white/[0.08]">
                 <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-bold">
                   <Flame className="w-3.5 h-3.5 text-amber-400 fill-amber-400 animate-pulse" />
-                  <span>OFFRE DE LANCEMENT — 30 PREMIERS ACHETEURS</span>
+                  <span>OFFRE PROMOTIONNELLE</span>
                 </div>
                 <span className="text-[11px] font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">
                   Accès Immédiat
                 </span>
               </div>
               <p className="text-xs text-[#AAB7C4] leading-relaxed pt-2.5">
-                Le tarif de lancement est volontairement accessible pour permettre aux premiers membres de rejoindre Vision Libre. Une fois les 30 premiers accès attribués, le tarif pourra évoluer.
+                Profitez du tarif promotionnel affiché sur cette page. Aucun compte à rebours ni nombre limité d’acheteurs n’est annoncé.
               </p>
             </div>
 
@@ -127,7 +127,7 @@ export const Hero: React.FC<HeroProps> = ({ onPrimaryCta, onDiscoverCta }) => {
                     <span className="text-white font-semibold">+50 Formations & Masterclasses</span>
                   </div>
                   <span className="text-blue-300 font-semibold text-[11px] bg-blue-900/50 px-2 py-0.5 rounded border border-blue-400/30">
-                    Licence MRR
+                    +50 formations
                   </span>
                 </div>
               </div>
