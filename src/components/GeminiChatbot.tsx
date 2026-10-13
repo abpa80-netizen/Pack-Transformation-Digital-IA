@@ -90,9 +90,9 @@ export const GeminiChatbot: React.FC<GeminiChatbotProps> = ({
     } catch (err) {
       console.error(err);
       // Fallback response if offline or backend error
-      let fallbackText = "Le Pack Transformation Digital & IA regroupe plus de 50 formations réparties en 5 pôles (IA, Business, Marketing, Finance et Tech) au offre promotionnelle de 15 €  en paiement unique . Souhaitez-vous commander votre accès ou échanger avec notre équipe ?";
+      let fallbackText = "Le Pack Transformation Digital & IA regroupe plus de 50 formations autour de l’IA, du business, du marketing, de la finance et de la tech. L’offre promotionnelle est de 15 € en paiement unique. Souhaitez-vous commander ou poser une question à l’équipe ?";
       
-      if (userText.includes('commander') || userText.includes('249') || userText.includes('prix') || userText.includes('tarif')) {
+      if (userText.includes('commander') || userText.includes('15 €') || userText.includes('15€') || userText.includes('prix') || userText.includes('tarif')) {
         fallbackText = "Pour commander le pack à 15 € en paiement unique, cliquez sur le bouton « Commander » ou contactez notre équipe via WhatsApp.";
       } else if (userText.includes('MRR') || userText.includes('revente')) {
         fallbackText = "Le pack regroupe des formations et ressources pédagogiques. Pour toute question sur le contenu, contactez notre équipe via WhatsApp.";
