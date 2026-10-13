@@ -18,8 +18,8 @@ export const OrderModal: React.FC<OrderModalProps> = ({
   if (!isOpen) return null;
 
   const whatsappMessage = selectedObjectiveTitle
-    ? `Bonjour Vision Libre, je souhaite profiter du offre promotionnelle du Pack Transformation Digital & IA. Mon objectif prioritaire : ${selectedObjectiveTitle}.`
-    : `Bonjour Vision Libre, je souhaite profiter du tarif de lancement du Pack Transformation Digital & IA.`;
+    ? `Bonjour Vision Libre, je souhaite profiter de l'offre promotionnelle du Pack Transformation Digital & IA. Mon objectif prioritaire : ${selectedObjectiveTitle}.`
+    : `Bonjour Vision Libre, je souhaite profiter de l’offre promotionnelle du Pack Transformation Digital & IA.`;
 
   return (
     <div 
@@ -131,7 +131,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
             </div>
 
             <a
-              href={getWhatsAppUrl('Bonjour Vision Libre, je souhaite recevoir les coordonnées de paiement pour régler le tarif de lancement du Pack Transformation Digital & IA.')}
+              href={getWhatsAppUrl('Bonjour Vision Libre, je souhaite recevoir les coordonnées de paiement pour régler le offre promotionnelle du Pack Transformation Digital & IA.')}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-5 text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-xl shadow-lg transition-all cursor-pointer"
