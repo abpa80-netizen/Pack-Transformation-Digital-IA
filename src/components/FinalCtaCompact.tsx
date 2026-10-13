@@ -36,7 +36,6 @@ export const FinalCtaCompact: React.FC<FinalCtaCompactProps> = ({ onOrderClick }
             +50 FORMATIONS
           </span>
           <span className="px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.1] text-xs font-medium text-slate-300">
-            MRR SELON LICENCE
           </span>
           <span className="px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.1] text-xs font-medium text-slate-300">
             ACCÈS AU CONTENU DU PACK
@@ -45,8 +44,7 @@ export const FinalCtaCompact: React.FC<FinalCtaCompactProps> = ({ onOrderClick }
 
         {/* Rappel transparent de l’offre */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs sm:text-sm font-bold mb-8 shadow-sm">
-          <Flame className="w-4 h-4 text-amber-400 fill-amber-400 animate-pulse" />
-          <span>🔥 OFFRE DE LANCEMENT — RÉSERVÉ AUX 30 PREMIERS ACHETEURS</span>
+          <span>OFFRE PROMOTIONNELLE · 15 € EN PAIEMENT UNIQUE</span>
         </div>
 
         {/* Actions */}
