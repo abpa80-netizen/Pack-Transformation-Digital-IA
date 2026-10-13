@@ -22,7 +22,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
     const handleBack = () => onClose();
     window.addEventListener('popstate', handleBack);
     return () => window.removeEventListener('popstate', handleBack);
-  }, [isOpen, onClose]);
+  }, [isOpen]);
 
   const closeModal = useCallback(() => {
     if (window.history.state?.appOverlay === 'order-modal') {
