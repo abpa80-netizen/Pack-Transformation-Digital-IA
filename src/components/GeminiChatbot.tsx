@@ -171,7 +171,13 @@ export const GeminiChatbot: React.FC<GeminiChatbotProps> = ({
             </div>
 
             <button
-              onClick={onToggle}
+              onClick={() => {
+                if (window.history.state?.appOverlay === 'chatbot-modal') {
+                  const { appOverlay, ...rest } = window.history.state;
+                  window.history.replaceState(rest, '', window.location.href);
+                }
+                onToggle();
+              }}
               className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/[0.08] transition-colors cursor-pointer"
               aria-label="Fermer le chatbot"
             >
