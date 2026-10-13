@@ -23,6 +23,8 @@ export interface Course {
   level: 'Débutant' | 'Intermédiaire' | 'Tous niveaux';
   highlight?: string;
   tag: string;
+  /** Contenu complémentaire, affiché comme bonus dans le catalogue. */
+  isBonus?: boolean;
 }
 
 export interface Pillar {
