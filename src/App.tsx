@@ -113,10 +113,7 @@ function MainAppContent() {
           />
 
           {/* 8. FAQ — ACCORDION UNIQUEMENT (Sans numérotation publique) */}
-          <FaqSectionAccordion 
-            onOpenChatbot={() => setIsChatbotOpen(true)}
-            onOpenLicense={() => setIsLicenseModalOpen(true)}
-          />
+          <FaqSectionAccordion onOpenChatbot={() => setIsChatbotOpen(true)} />
 
           {/* 9. CTA FINAL — COMPACT */}
           <FinalCtaCompact 
@@ -139,10 +136,7 @@ function MainAppContent() {
       )}
 
       {/* 11. FOOTER COMPACT AVEC MAILLAGE THÉMATIQUE */}
-      <FooterCompact 
-        onOpenCatalogue={() => setIsCatalogueModalOpen(true)} 
-        onOpenLicense={() => setIsLicenseModalOpen(true)}
-      />
+      <FooterCompact onOpenCatalogue={() => setIsCatalogueModalOpen(true)} />
 
       {/* 12. CTA STICKY MOBILE (Mobile uniquement) */}
       <StickyMobileCta 
