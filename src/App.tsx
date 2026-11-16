@@ -86,10 +86,10 @@ function MainAppContent() {
           {/* 2. HERO — ULTRA COMPACT */}
           <Hero />
 
-          {/* 3. OBJECTIF — aider le visiteur à choisir son parcours rapidement */}
-          <ObjectiveSelector onSelectObjective={(title) => handleOpenOrderModal(title)} />
+          {/* 2. À qui s'adresse le pack — carousel de profils */}
+          <TargetAudienceSection />
 
-          {/* 4. CATALOGUE — accès rapide aux formations sans allonger la page */}
+          {/* 3. Bibliothèque complète — catalogue des formations */}
           <CatalogueSection
             isModalOpen={isCatalogueModalOpen}
             onOpenModal={() => setIsCatalogueModalOpen(true)}
@@ -98,8 +98,8 @@ function MainAppContent() {
             onOrderClick={(courseTitle) => handleOpenOrderModal(courseTitle)}
           />
 
-          {/* 5. Public cible */}
-          <TargetAudienceSection />
+          {/* 4. Quel est ton objectif — carousel existant conservé */}
+          <ObjectiveSelector onSelectObjective={(title) => handleOpenOrderModal(title)} />
 
           {/* 6. TÉMOIGNAGES — 💬 ILS ONT COMMENCÉ LEUR PARCOURS */}
           <TestimonialsSection />
@@ -136,9 +136,9 @@ function MainAppContent() {
       <FooterCompact onOpenCatalogue={() => setIsCatalogueModalOpen(true)} />
 
       {/* 12. CTA STICKY MOBILE (Mobile uniquement) */}
-      <StickyMobileCta 
-        onOrderClick={() => handleOpenOrderModal()} 
-      />
+      {!isHome && (
+        <StickyMobileCta onOrderClick={() => handleOpenOrderModal()} />
+      )}
 
       {/* 13. MODAL DE COMMANDE EXPRESS (WhatsApp + Virement Bancaire Marocain) */}
       <OrderModal
