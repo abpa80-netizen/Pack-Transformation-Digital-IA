@@ -6,7 +6,7 @@ export const Hero: React.FC = () => (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-5 items-center">
         <div className="max-w-4xl flex flex-col items-start text-left">
-          <span className="text-xs font-mono font-bold tracking-widest text-blue-400 uppercase mb-3">VISION LIBRE DIGITAL LAB</span>
+          <span className="text-xs font-mono font-bold tracking-widest text-blue-400 uppercase mb-3">DIGITAL LAB</span>
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.12] mb-3 text-balance" style={{ fontFamily: 'Syne, sans-serif' }}>
             DÉVELOPPE TES COMPÉTENCES.
             <span className="block bg-gradient-to-r from-blue-400 via-indigo-300 to-white bg-clip-text text-transparent">EXPLORE LE DIGITAL ET L’IA.</span>
