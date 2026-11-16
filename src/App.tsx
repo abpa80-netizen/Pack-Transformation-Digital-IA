@@ -84,10 +84,7 @@ function MainAppContent() {
           <SeoHead canonicalPath="/" />
           
           {/* 2. HERO — ULTRA COMPACT */}
-          <Hero 
-            onPrimaryCta={() => handleOpenOrderModal()}
-            onDiscoverCta={handleScrollToObjectives}
-          />
+          <Hero />
 
           {/* 3. OBJECTIF — aider le visiteur à choisir son parcours rapidement */}
           <ObjectiveSelector onSelectObjective={(title) => handleOpenOrderModal(title)} />
