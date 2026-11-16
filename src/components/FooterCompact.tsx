@@ -17,7 +17,7 @@ export const FooterCompact: React.FC<FooterCompactProps> = ({ onOpenCatalogue })
               className="text-lg font-black text-white tracking-tight block"
               style={{ fontFamily: 'Syne, sans-serif' }}
             >
-              VISION LIBRE DIGITAL LAB
+              DIGITAL LAB
             </span>
             <p className="text-xs text-blue-300 mt-1 italic font-medium">
               « Apprendre. Créer. Entreprendre. Évoluer. »
@@ -39,7 +39,7 @@ export const FooterCompact: React.FC<FooterCompactProps> = ({ onOpenCatalogue })
               FAQ
             </a>
             <a 
-              href={getWhatsAppUrl("Bonjour Vision Libre, je souhaite échanger avec l'équipe.")}
+              href={getWhatsAppUrl("Bonjour Digital Lab, je souhaite échanger avec l'équipe.")}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-emerald-400 text-emerald-400/90 font-medium transition-colors"
@@ -50,7 +50,7 @@ export const FooterCompact: React.FC<FooterCompactProps> = ({ onOpenCatalogue })
 
           {/* Copyright without phone number */}
           <div className="text-[11px] text-slate-400">
-            © {new Date().getFullYear()} VISION LIBRE DIGITAL LAB. Tous droits réservés.
+            © {new Date().getFullYear()} DIGITAL LAB. Tous droits réservés.
           </div>
 
         </div>
