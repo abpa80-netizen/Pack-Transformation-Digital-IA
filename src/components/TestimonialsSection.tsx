@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Star, MessageSquare, ChevronLeft, ChevronRight, User } from 'lucide-react';
 
 interface TestimonialSlot {
@@ -52,6 +52,13 @@ export const TestimonialsSection: React.FC = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => window.clearInterval(timer);
+  }, [testimonials.length]);
+
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
   };
@@ -79,43 +86,9 @@ export const TestimonialsSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="hidden md:grid md:grid-cols-2 xl:grid-cols-4 gap-5 max-w-6xl mx-auto">
-          {testimonials.map((t) => (
-            <div
-              key={t.id}
-              className="p-6 rounded-2xl bg-[#0D1B2A] border border-white/[0.08] hover:border-blue-500/40 transition-all flex flex-col justify-between shadow-lg relative group"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-1 text-amber-400">
-                  {[...Array(t.rating)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
-                  ))}
-                </div>
-                <span className="text-[9px] font-mono uppercase px-2 py-0.5 rounded bg-white/[0.04] text-slate-400 border border-white/[0.06]">
-                  {t.tag}
-                </span>
-              </div>
-
-              <p className="text-xs sm:text-sm text-slate-200 leading-relaxed italic mb-6">
-                « {t.quote} »
-              </p>
-
-              <div className="pt-4 border-t border-white/[0.06] flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-300 font-bold text-xs shrink-0">
-                  {t.author.charAt(0)}
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-white">{t.author}</h4>
-                  <span className="text-[11px] text-[#AAB7C4]">{t.role}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="md:hidden max-w-sm mx-auto relative">
-          <div className="p-6 rounded-2xl bg-[#0D1B2A] border border-blue-500/30 shadow-xl">
-            <div className="flex items-center justify-between mb-3">
+        <div className="max-w-2xl mx-auto relative">
+          <div className="p-6 sm:p-8 rounded-2xl bg-[#0D1B2A] border border-blue-500/30 shadow-xl min-h-[220px] flex flex-col justify-between">
+            <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-1 text-amber-400">
                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
                   <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
@@ -125,50 +98,32 @@ export const TestimonialsSection: React.FC = () => {
                 {testimonials[currentIndex].tag}
               </span>
             </div>
-
-            <p className="text-xs text-slate-200 leading-relaxed italic mb-6">
+            <p className="text-sm sm:text-base text-slate-200 leading-relaxed italic mb-6">
               « {testimonials[currentIndex].quote} »
             </p>
-
-            <div className="pt-3 border-t border-white/[0.06] flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-300 font-bold text-xs shrink-0">
+            <div className="pt-4 border-t border-white/[0.06] flex items-center gap-3">
+              <div className="w-9 h-9 rounded-full bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-300 font-bold text-xs shrink-0">
                 {testimonials[currentIndex].author.charAt(0)}
               </div>
               <div>
                 <h4 className="text-xs font-bold text-white">{testimonials[currentIndex].author}</h4>
-                <span className="text-[10px] text-[#AAB7C4]">{testimonials[currentIndex].role}</span>
+                <span className="text-[11px] text-[#AAB7C4]">{testimonials[currentIndex].role}</span>
               </div>
             </div>
           </div>
-
           <div className="flex items-center justify-between mt-3 px-2">
-            <button
-              onClick={prevSlide}
-              className="p-1.5 rounded-lg bg-[#0D1B2A] border border-white/[0.08] text-slate-300"
-              aria-label="Précédent"
-            >
+            <button onClick={prevSlide} className="p-2 rounded-lg bg-[#0D1B2A] border border-white/[0.08] text-slate-300" aria-label="Précédent">
               <ChevronLeft className="w-4 h-4" />
             </button>
             <div className="flex items-center gap-1">
               {testimonials.map((_, i) => (
-                <span
-                  key={i}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    i === currentIndex ? 'bg-blue-400' : 'bg-white/20'
-                  }`}
-                />
+                <button key={i} onClick={() => setCurrentIndex(i)} className={`w-2 h-2 rounded-full transition-colors ${i === currentIndex ? 'bg-blue-400' : 'bg-white/20'}`} aria-label={`Afficher le témoignage ${i + 1}`} />
               ))}
             </div>
-            <button
-              onClick={nextSlide}
-              className="p-1.5 rounded-lg bg-[#0D1B2A] border border-white/[0.08] text-slate-300"
-              aria-label="Suivant"
-            >
+            <button onClick={nextSlide} className="p-2 rounded-lg bg-[#0D1B2A] border border-white/[0.08] text-slate-300" aria-label="Suivant">
               <ChevronRight className="w-4 h-4" />
             </button>
           </div>
+          <p className="text-center text-[10px] text-slate-500 mt-2">Défilement automatique · toutes les 5 secondes</p>
         </div>
-      </div>
-    </section>
-  );
-};
+
