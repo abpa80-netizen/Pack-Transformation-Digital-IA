@@ -123,7 +123,7 @@ const TARGET_PROFILES: TargetProfile[] = [
     icon: Bot,
     tag: 'Intelligence artificielle',
     accentColor: 'from-blue-500/20 to-sky-500/10 border-blue-500/30 text-blue-400',
-    description: 'Vous voulez intégrer l’IA générative et l’automatisation dans vos tâches professionnelles pour gagner du temps, mieux organiser votre travail et explorer de nouvelles méthodes.'
+    description: 'Vous voulez intégrer l’IA générative et l’automatisation dans vos tâches professionnelles pour gagner du temps, mieux organiser votre travail et explorer de nouvelles méthodes.',
     recommendedCourses: [
       'ChatGPT de A à Z : maîtriser ChatGPT',
       'Boostez votre productivité avec ChatGPT : 50+ prompts',
@@ -164,24 +164,27 @@ export const TargetAudienceSection: React.FC = () => {
             className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-3"
             style={{ fontFamily: 'Syne, sans-serif' }}
           >
-            POUR QUI EST CE PACK ?
+            À QUI S'ADRESSE LE PACK ?
           </h2>
           <p className="text-xs sm:text-sm text-[#AAB7C4] leading-relaxed">
-            Cliquez sur votre profil pour découvrir les formations et compétences du pack adaptées à vos objectifs.
+            Fais défiler les profils pour découvrir les parcours adaptés à ton activité.
           </p>
         </div>
 
-        {/* 8 Modern Visual Cards Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+        {/* Carousel horizontal des profils */}
+        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-none" role="region" aria-label="Profils concernés par le pack">
           {TARGET_PROFILES.map((profile) => {
             const Icon = profile.icon;
             return (
               <button
                 key={profile.id}
                 onClick={() => setSelectedProfile(profile)}
-                className="group p-4 sm:p-5 rounded-2xl bg-[#0D1B2A] border border-white/[0.08] hover:border-blue-500/50 hover:bg-[#0f2136] transition-all duration-200 text-left flex flex-col justify-between shadow-lg hover:shadow-blue-500/10 active:scale-[0.98] cursor-pointer"
+                className="group snap-start shrink-0 w-[78vw] max-w-[270px] sm:w-[260px] p-3 rounded-2xl bg-[#0D1B2A] border border-white/[0.08] hover:border-blue-500/50 transition-all duration-200 text-left shadow-lg active:scale-[0.98] cursor-pointer"
               >
                 <div>
+                  <div className="h-36 -mx-3 -mt-3 mb-3 overflow-hidden rounded-t-2xl bg-gradient-to-br from-blue-600/40 to-indigo-900/80 flex items-center justify-center">
+                    <Icon className="w-14 h-14 text-white/90" aria-hidden="true" />
+                  </div>
                   <div className="flex items-center justify-between gap-2 mb-3">
                     <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                       <Icon className="w-5 h-5" />
@@ -211,6 +214,7 @@ export const TargetAudienceSection: React.FC = () => {
             );
           })}
         </div>
+        <p className="mt-1 text-center text-[11px] text-slate-500 sm:hidden">Fais glisser pour découvrir les autres profils →</p>
 
       </div>
 
