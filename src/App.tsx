@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { TargetAudienceSection } from './components/TargetAudienceSection';
+import { HowItWorksSection } from './components/HowItWorksSection';
 import { ObjectiveSelector } from './components/ObjectiveSelector';
 import { CatalogueSection } from './components/CatalogueSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
@@ -101,10 +102,13 @@ function MainAppContent() {
           {/* 4. Quel est ton objectif — carousel existant conservé */}
           <ObjectiveSelector onSelectObjective={(title) => handleOpenOrderModal(title)} />
 
-          {/* 6. TÉMOIGNAGES — 💬 ILS ONT COMMENCÉ LEUR PARCOURS */}
+          {/* 5. Comment ça fonctionne */}
+          <HowItWorksSection />
+
+          {/* Témoignages — après la présentation du parcours */}
           <TestimonialsSection />
 
-          {/* 7. PRIX — offre et éléments de réassurance */}
+          {/* 6. Prix — offre et commande */}
           <PricingSectionSingle 
             onOrderClick={() => handleOpenOrderModal()} 
           />
