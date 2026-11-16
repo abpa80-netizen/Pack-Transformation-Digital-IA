@@ -23,11 +23,13 @@ interface TargetProfile {
   accentColor: string;
   description: string;
   recommendedCourses: string[];
+  image: string;
 }
 
 const TARGET_PROFILES: TargetProfile[] = [
   {
     id: 'entrepreneurs',
+    image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85',
     title: 'Entrepreneurs',
     subtitle: 'Structurer & scaler',
     icon: Briefcase,
@@ -43,6 +45,7 @@ const TARGET_PROFILES: TargetProfile[] = [
   },
   {
     id: 'ecommercants',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=85',
     title: 'E-commerçants',
     subtitle: 'Vente & acquisition',
     icon: ShoppingCart,
@@ -58,6 +61,7 @@ const TARGET_PROFILES: TargetProfile[] = [
   },
   {
     id: 'freelances',
+    image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85',
     title: 'Freelances',
     subtitle: 'Services & clients',
     icon: UserCheck,
@@ -73,6 +77,7 @@ const TARGET_PROFILES: TargetProfile[] = [
   },
   {
     id: 'debutants',
+    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85',
     title: 'Débutants',
     subtitle: 'Démarrage guidé',
     icon: Sparkles,
@@ -88,6 +93,7 @@ const TARGET_PROFILES: TargetProfile[] = [
   },
   {
     id: 'createurs',
+    image: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=900&q=85',
     title: 'Créateurs de contenu',
     subtitle: 'Audience & impact',
     icon: Video,
@@ -103,6 +109,7 @@ const TARGET_PROFILES: TargetProfile[] = [
   },
   {
     id: 'produits-digitaux',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=85',
     title: 'Vendeurs de produits digitaux',
     subtitle: 'Produits numériques',
     icon: Package,
@@ -118,6 +125,7 @@ const TARGET_PROFILES: TargetProfile[] = [
   },
   {
     id: 'pros-ia',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=85',
     title: 'Professionnels intéressés par l\'IA',
     subtitle: 'Productivité & agents',
     icon: Bot,
@@ -133,6 +141,7 @@ const TARGET_PROFILES: TargetProfile[] = [
   },
   {
     id: 'creatifs-tech',
+    image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=900&q=85',
     title: 'Profils créatifs & tech',
     subtitle: 'Design & conception',
     icon: Palette,
@@ -182,8 +191,10 @@ export const TargetAudienceSection: React.FC = () => {
                 className="group snap-start shrink-0 w-[78vw] max-w-[270px] sm:w-[260px] p-3 rounded-2xl bg-[#0D1B2A] border border-white/[0.08] hover:border-blue-500/50 transition-all duration-200 text-left shadow-lg active:scale-[0.98] cursor-pointer"
               >
                 <div>
-                  <div className="h-36 -mx-3 -mt-3 mb-3 overflow-hidden rounded-t-2xl bg-gradient-to-br from-blue-600/40 to-indigo-900/80 flex items-center justify-center">
-                    <Icon className="w-14 h-14 text-white/90" aria-hidden="true" />
+                  <div className="relative h-36 -mx-3 -mt-3 mb-3 overflow-hidden rounded-t-2xl">
+                    <img src={profile.image} alt={profile.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#07111F]/90 via-transparent to-transparent" />
+                    <div className="absolute bottom-3 left-3 rounded-lg bg-blue-600/90 p-2 text-white"><Icon className="w-5 h-5" aria-hidden="true" /></div>
                   </div>
                   <div className="flex items-center justify-between gap-2 mb-3">
                     <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
