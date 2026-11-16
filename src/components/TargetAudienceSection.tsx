@@ -93,7 +93,7 @@ const TARGET_PROFILES: TargetProfile[] = [
   },
   {
     id: 'createurs',
-    image: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=900&q=85',
+    image: 'https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=900&q=85',
     title: 'Créateurs de contenu',
     subtitle: 'Audience & impact',
     icon: Video,
@@ -192,7 +192,7 @@ export const TargetAudienceSection: React.FC = () => {
               >
                 <div>
                   <div className="relative h-36 -mx-3 -mt-3 mb-3 overflow-hidden rounded-t-2xl">
-                    <img src={profile.image} alt={profile.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <img src={profile.image} alt={profile.title} loading="lazy" decoding="async" referrerPolicy="no-referrer" onError={(event) => { event.currentTarget.src = 'https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=900&q=85'; }} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#07111F]/90 via-transparent to-transparent" />
                     <div className="absolute bottom-3 left-3 rounded-lg bg-blue-600/90 p-2 text-white"><Icon className="w-5 h-5" aria-hidden="true" /></div>
                   </div>
